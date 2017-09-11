@@ -176,7 +176,34 @@ const utility = {
                 return aKeys;
             }
         }
-    }
+    },
+    validation: (function () {
+
+        function maxLength(max, value) {
+            return value && value.length > max ? 'b591d5f.0450d1b.2641950.d' : undefined;
+        }
+
+        function minLength(min, value) {
+            return value && value.length < min ? 'b591d5f.0450d1b.6592623.d' : undefined;
+        }
+
+        return {
+            required: function (value) {
+                return (value ? undefined : 'b591d5f.0450d1b.1279171.d');
+            },
+            lengthMax15: maxLength(15),
+            lengthMin6: minLength(6),
+            userName: function (value) {
+                return (value && !/^[A-Za-z0-9\-]+$/i.test(value) ? 'b591d5f.0450d1b.2b0c3da.d' : undefined);
+            },
+            email: function (value) {
+                return (value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ? 'b591d5f.0450d1b.c3bf881.d' : undefined);
+            },
+            phoneNumber: function (value) {
+                return (value && !/^(0|[1-9][0-9]{9})$/i.test(value) ? 'b591d5f.0450d1b.c1544c7.d' : undefined)
+            }
+        }
+    })()
 }
 
 export default utility;
