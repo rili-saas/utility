@@ -191,8 +191,12 @@ const utility = {
             required: function (value) {
                 return (value ? undefined : 'b591d5f.0450d1b.1279171.d');
             },
-            lengthMax15: maxLength(15),
-            lengthMin6: minLength(6),
+            lengthMax15: function (value) {
+                return maxLength(15, value);
+            },
+            lengthMin6: function (value) {
+                return minLength(6, value)
+            },
             userName: function (value) {
                 return (value && !/^[A-Za-z0-9\-]+$/i.test(value) ? 'b591d5f.0450d1b.2b0c3da.d' : undefined);
             },
