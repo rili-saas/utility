@@ -1,3 +1,5 @@
+const crypto = require('crypto');
+
 const utility = {
     i18n: {
         // https://github.com/yahoo/react-intl/wiki/Upgrade-Guide
@@ -207,7 +209,60 @@ const utility = {
                 return (value && !/^(0|[1-9][0-9]{9})$/i.test(value) ? 'b591d5f.0450d1b.c1544c7.d' : undefined)
             }
         }
-    })()
+    })(),
+    crypto: {
+        hash: function hash(pwd, salt, fn) {
+
+            var len = 128;
+            var iterations = 12000;
+
+            if (3 == arguments.length) {
+                if (!pwd) return fn(new Error('password missing'));
+                if (!salt) return fn(new Error('salt missing'));
+                crypto.pbkdf2(pwd, salt, iterations, len, fn);
+            } else {
+                fn = salt;
+                if (!pwd) return fn(new Error('password missing'));
+                crypto.randomBytes(len, function (err, salt) {
+                    if (err) return fn(err);
+                    salt = salt.toString('base64');
+                    crypto.pbkdf2(pwd, salt, iterations, len, function (err, hash) {
+                        if (err) return fn(err);
+                        fn(null, salt, hash);
+                    });
+                });
+            }
+        }
+    },
+    math: {
+        guid: function guid(length, radix) {
+            // http://www.ietf.org/rfc/rfc4122.txt
+            var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split(''),
+                uuid = [],
+                i;
+            radix = radix || chars.length;
+
+            if (length) {
+                for (i = 0; i < length; i++) {
+                    uuid[i] = chars[0 | Math.random() * radix];
+                }
+            } else {
+                var r;
+
+                uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-';
+                uuid[14] = '4';
+
+                for (i = 0; i < 36; i++) {
+                    if (!uuid[i]) {
+                        r = 0 | Math.random() * 16;
+                        uuid[i] = chars[i == 19 ? r & 0x3 | 0x8 : r];
+                    }
+                }
+            }
+
+            return uuid.join('').toLowerCase();
+        }
+    }
 }
 
 export default utility;
