@@ -1,6 +1,6 @@
-const crypto = require('crypto');
+var crypto = require('crypto');
 
-const utility = {
+var utility = {
     i18n: {
         // https://github.com/yahoo/react-intl/wiki/Upgrade-Guide
         flattenMessages: function (nestedMessages, prefix) {
@@ -265,4 +265,6 @@ const utility = {
     }
 }
 
-export default utility;
+module.exports = utility;
+
+// export default utility;
