@@ -1,4 +1,4 @@
-var crypto = require('crypto');
+// var crypto = require('crypto');
 
 var utility = {
     i18n: {
@@ -210,30 +210,30 @@ var utility = {
             }
         }
     })(),
-    crypto: {
-        hash: function hash(pwd, salt, fn) {
+    // crypto: {
+    //     hash: function hash(pwd, salt, fn) {
 
-            var len = 128;
-            var iterations = 12000;
+    //         var len = 128;
+    //         var iterations = 12000;
 
-            if (3 == arguments.length) {
-                if (!pwd) return fn(new Error('password missing'));
-                if (!salt) return fn(new Error('salt missing'));
-                crypto.pbkdf2(pwd, salt, iterations, len, fn);
-            } else {
-                fn = salt;
-                if (!pwd) return fn(new Error('password missing'));
-                crypto.randomBytes(len, function (err, salt) {
-                    if (err) return fn(err);
-                    salt = salt.toString('base64');
-                    crypto.pbkdf2(pwd, salt, iterations, len, function (err, hash) {
-                        if (err) return fn(err);
-                        fn(null, salt, hash);
-                    });
-                });
-            }
-        }
-    },
+    //         if (3 == arguments.length) {
+    //             if (!pwd) return fn(new Error('password missing'));
+    //             if (!salt) return fn(new Error('salt missing'));
+    //             crypto.pbkdf2(pwd, salt, iterations, len, fn);
+    //         } else {
+    //             fn = salt;
+    //             if (!pwd) return fn(new Error('password missing'));
+    //             crypto.randomBytes(len, function (err, salt) {
+    //                 if (err) return fn(err);
+    //                 salt = salt.toString('base64');
+    //                 crypto.pbkdf2(pwd, salt, iterations, len, function (err, hash) {
+    //                     if (err) return fn(err);
+    //                     fn(null, salt, hash);
+    //                 });
+    //             });
+    //         }
+    //     }
+    // },
     math: {
         guid: function guid(length, radix) {
             // http://www.ietf.org/rfc/rfc4122.txt
