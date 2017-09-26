@@ -1,7 +1,8 @@
 
 // https://www.npmjs.com/package/tape
 // https://medium.com/@andy.neale/unit-testing-javascript-applications-with-tape-1d4f5d5fc825
-var test = require('tape');
+var test = require('tape'),
+    utility = require('../index');
 
 test('utility - math', function (t) {
 
