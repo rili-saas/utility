@@ -15,13 +15,13 @@
     },
     "scripts": {
         "deploy": "npm publish",
-        "test": "tape test/**.js | tap-html --out ./test/index.html"
+        "test": "tape test | tap-html --out ./test/index.html"
     },
     "devDependencies": {
-        "tap-html": "^0.1.1",
-        "tape": "^4.8.0",
         "gulp": "gulpjs/gulp#4.0",
-        "gulp-bump": "^2.7.0"
+        "gulp-bump": "^2.8.0",
+        "tap-html": "^0.1.6",
+        "tape": "^4.8.0"
     },
     "dependencies": {}
 }
