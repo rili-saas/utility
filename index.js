@@ -68,6 +68,8 @@ var utility = {
                     if (data.code === 200) {
                         utility.net.info.data = JSON.parse(data.message);
                         // console.log(utility.net.info.data)
+                    } else {
+                        utility.net.info.data = {};
                     }
                 });
 
