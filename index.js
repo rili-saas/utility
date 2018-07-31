@@ -63,16 +63,16 @@ var utility = {
             data: null,
             load: function () {
                 utility.net.request({
-                    url: "https://freegeoip.net/json/"
+                    url: "http://api.ipstack.com/check?access_key=4e033eb864b6a92fa9027da214a67ccc&format=1"
+                    // url: "https://freegeoip.net/json/"
                 }).then(function (data) {
                     if (data.code === 200) {
                         utility.net.info.data = JSON.parse(data.message);
                         // console.log(utility.net.info.data)
-                    } else {
-                        utility.net.info.data = {};
-                    }
+                    };
+                }).catch(function (error) {
+                    utility.net.info.data = {};
                 });
-
             }
         }
     },
