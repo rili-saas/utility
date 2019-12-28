@@ -1,29 +1,28 @@
 {
-    "name": "@ciro-maciel/utility",
-    "version": "0.1.4",
-    "description": "Utility package for development of Modern Web Applications",
-    "homepage": "http://ciro-maciel.me",
-    "private": false,
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/ciro-maciel/utility.git"
-    },
-    "license": "CC-BY-SA-4.0",
-    "main": "index.js",
-    "author": {
-        "name": "Ciro Cesar Maciel",
-        "email": "ciro.maciel@c37.co"
-    },
-    "scripts": {
-        "deploy": "npm publish --access public",
-        "test": "tape test/**.js | tap-html --out ./test/index.html"
-    },
-    "devDependencies": {
-        "babel-minify-webpack-plugin": "^0.3.1",
-        "gulp": "gulpjs/gulp#4.0",
-        "gulp-bump": "^2.7.0",
-        "tap-html": "^0.1.1",
-        "tape": "^4.8.0"
-    },
-    "dependencies": {}
+  "name": "@rili/utility",
+  "version": "0.1.5",
+  "description": "Utility package for development Applications",
+  "homepage": "http://rili.be/open-source",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rili-be/utility.git"
+  },
+  "license": "CC-BY-SA-4.0",
+  "main": "index.js",
+  "author": {
+    "name": "Ciro Cesar Maciel",
+    "email": "ciro.maciel@c37.co"
+  },
+  "scripts": {
+    "deploy": "npm publish --access public",
+    "test": "tape test/**.js | tap-html --out ./test/index.html"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-bump": "^2.7.0",
+    "tap-html": "^0.1.1",
+    "tape": "^4.8.0"
+  },
+  "dependencies": {}
 }
