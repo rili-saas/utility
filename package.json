@@ -3,7 +3,7 @@
   "version": "0.1.6",
   "description": "Utility package for development Applications",
   "homepage": "http://rili.be/open-source",
-  "private": clear,
+  "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/rili-be/utility.git"
