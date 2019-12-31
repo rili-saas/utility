@@ -88,8 +88,10 @@ var utility = {
                 if (!results) return null;
                 if (!results[2]) return '';
                 return decodeURIComponent(results[2].replace(/\+/g, " "));
+            },
+            getDomainName: function (hostName) {
+                return hostName.substring(hostName.lastIndexOf('.', hostName.lastIndexOf('.') - 1) + 1);
             }
-
         },
         cookie: {
             /*\
