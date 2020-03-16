@@ -65,9 +65,10 @@ var utility = {
       load: function() {
         utility.net
           .request({
-            url:
-              "http://api.ipstack.com/check?access_key=4e033eb864b6a92fa9027da214a67ccc&format=1"
+            // url:
+            //   "http://api.ipstack.com/check?access_key=4e033eb864b6a92fa9027da214a67ccc&format=1"
             // url: "https://freegeoip.net/json/"
+            url: "https://ipapi.co/json/"
           })
           .then(function(data) {
             if (data.code === 200) {
