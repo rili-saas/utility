@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/ciro-maciel/utility/compare/v1.0.0...v1.1.0) (2020-12-27)
+
+
+### Features
+
+* **function:** add debounce ([ea8c18e](https://github.com/ciro-maciel/utility/commit/ea8c18e5ab19fdc9400b2140dc4bb219cf54a644))
+
 # 1.0.0 (2020-12-15)
 
 
