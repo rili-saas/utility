@@ -269,6 +269,26 @@ var utility = {
 
       return uuid.join("").toLowerCase();
     }
+  },
+  "function": {
+    // https://davidwalsh.name/javascript-debounce-function
+    debounce: function debounce(func, wait, immediate) {
+      var timeout;
+      return function () {
+        var context = this,
+            args = arguments;
+
+        var later = function later() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    }
   } // crypto: {
   //     hash: function hash(pwd, salt, fn) {
   //         var len = 128;

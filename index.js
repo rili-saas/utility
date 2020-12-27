@@ -3,8 +3,8 @@
 var utility = {
   i18n: {
     // https://github.com/yahoo/react-intl/wiki/Upgrade-Guide
-    flattenMessages: function(nestedMessages, prefix) {
-      return Object.keys(nestedMessages).reduce(function(messages, key) {
+    flattenMessages: function (nestedMessages, prefix) {
+      return Object.keys(nestedMessages).reduce(function (messages, key) {
         var value = nestedMessages[key];
         var prefixedKey = prefix ? prefix + "." + key : key;
 
@@ -19,7 +19,7 @@ var utility = {
 
         return messages;
       }, {});
-    }
+    },
   },
   // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
   // para evitar o Method OPTIONS estou enviando o post como text/plain
@@ -29,22 +29,22 @@ var utility = {
     // http://ccoenraets.github.io/es6-tutorial-data/promisify/
     // http://stackoverflow.com/questions/28921127/how-to-wait-for-a-javascript-promise-to-resolve-before-resuming-function
     // https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHttpRequest
-    request: function(obj) {
-      return new Promise(function(resolve, reject) {
+    request: function (obj) {
+      return new Promise(function (resolve, reject) {
         var xhr = new XMLHttpRequest();
         xhr.open(obj.method || "GET", obj.url);
         if (obj.headers) {
-          Object.keys(obj.headers).forEach(function(key) {
+          Object.keys(obj.headers).forEach(function (key) {
             xhr.setRequestHeader(key, obj.headers[key]);
           });
         }
-        xhr.onload = function() {
+        xhr.onload = function () {
           // console.log(xhr.getAllResponseHeaders());
 
           // https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
           resolve({
             code: xhr.status,
-            message: xhr.response || xhr.responseText
+            message: xhr.response || xhr.responseText,
           });
 
           // if (xhr.status >= 200 && xhr.status < 300) {
@@ -54,7 +54,7 @@ var utility = {
           // }
         };
 
-        xhr.onerror = function() {
+        xhr.onerror = function () {
           reject(xhr.statusText);
         };
         xhr.send(obj.body);
@@ -62,30 +62,30 @@ var utility = {
     },
     info: {
       data: null,
-      load: function() {
+      load: function () {
         utility.net
           .request({
             // url:
             //   "http://api.ipstack.com/check?access_key=4e033eb864b6a92fa9027da214a67ccc&format=1"
             // url: "https://freegeoip.net/json/"
-            url: "https://ipapi.co/json/"
+            url: "https://ipapi.co/json/",
           })
-          .then(function(data) {
+          .then(function (data) {
             if (data.code === 200) {
               utility.net.info.data = JSON.parse(data.message);
               // console.log(utility.net.info.data)
             }
           })
-          .catch(function(error) {
+          .catch(function (error) {
             utility.net.info.data = {};
           });
-      }
-    }
+      },
+    },
   },
   navigator: {
     url: {
       // https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript?answertab=active#tab-top
-      getByName: function(name, url) {
+      getByName: function (name, url) {
         if (!url) url = window.location.href;
         // name = name.replace(/[\[\]]/g, "\\$&");
         name = name.replace(/[\\]]/g, "\\$&");
@@ -95,11 +95,11 @@ var utility = {
         if (!results[2]) return "";
         return decodeURIComponent(results[2].replace(/\+/g, " "));
       },
-      getDomainName: function(hostName) {
+      getDomainName: function (hostName) {
         return hostName.substring(
           hostName.lastIndexOf(".", hostName.lastIndexOf(".") - 1) + 1
         );
-      }
+      },
     },
     cookie: {
       /*\
@@ -126,7 +126,7 @@ var utility = {
             |*|  * docCookies.keys()
             |*|
             \*/
-      get: function(sKey) {
+      get: function (sKey) {
         if (!sKey) {
           return null;
         }
@@ -144,7 +144,7 @@ var utility = {
           ) || null
         );
       },
-      add: function(sKey, sValue, vEnd, sPath, sDomain, bSecure) {
+      add: function (sKey, sValue, vEnd, sPath, sDomain, bSecure) {
         // if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) {
         if (!sKey || /^(?:expires|max-age|path|domain|secure)$/i.test(sKey)) {
           return false;
@@ -187,7 +187,7 @@ var utility = {
           (bSecure ? "; secure" : "");
         return true;
       },
-      remove: function(sKey, sPath, sDomain) {
+      remove: function (sKey, sPath, sDomain) {
         if (!this.has(sKey)) {
           return false;
         }
@@ -198,7 +198,7 @@ var utility = {
           (sPath ? "; path=" + sPath : "");
         return true;
       },
-      has: function(sKey) {
+      has: function (sKey) {
         // if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) {
         if (!sKey || /^(?:expires|max-age|path|domain|secure)$/i.test(sKey)) {
           return false;
@@ -210,7 +210,7 @@ var utility = {
             "\\s*\\="
         ).test(document.cookie);
       },
-      keys: function() {
+      keys: function () {
         // var aKeys = document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g, "").split(/\s*(?:\=[^;]*)?;\s*/);
         var aKeys = document.cookie
           .replace(/((?:^|\s*;)[^\]+)(?=;|$)|^\s*|\s*(?:^;]*)?(?:\1|$)/g, "")
@@ -219,10 +219,10 @@ var utility = {
           aKeys[nIdx] = decodeURIComponent(aKeys[nIdx]);
         }
         return aKeys;
-      }
-    }
+      },
+    },
   },
-  validation: (function() {
+  validation: (function () {
     function maxLength(max, value) {
       return value && value.length > max
         ? "b591d5f.0450d1b.2641950.d"
@@ -236,35 +236,35 @@ var utility = {
     }
 
     return {
-      required: function(value) {
+      required: function (value) {
         return value ? undefined : "b591d5f.0450d1b.1279171.d";
       },
-      lengthMax15: function(value) {
+      lengthMax15: function (value) {
         return maxLength(15, value);
       },
-      lengthMin6: function(value) {
+      lengthMin6: function (value) {
         return minLength(6, value);
       },
-      userName: function(value) {
+      userName: function (value) {
         return value && !/^[A-Za-z0-9\-]+$/i.test(value)
           ? "b591d5f.0450d1b.2b0c3da.d"
           : undefined;
       },
-      email: function(value) {
+      email: function (value) {
         return value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
           ? "b591d5f.0450d1b.c3bf881.d"
           : undefined;
       },
-      phoneNumber: function(value) {
+      phoneNumber: function (value) {
         return value && !/^(0|[1-9][0-9]{9})$/i.test(value)
           ? "b591d5f.0450d1b.c1544c7.d"
           : undefined;
-      }
+      },
     };
   })(),
   string: {
     // https://stackoverflow.com/questions/36637146/javascript-encode-string-to-hex
-    toHex: function(tmp) {
+    toHex: function (tmp) {
       var str = "";
       for (var i = 0; i < tmp.length; i++) {
         str += tmp[i].charCodeAt(0).toString(16);
@@ -272,9 +272,9 @@ var utility = {
       return str;
     },
     // https://flaviocopes.com/how-to-uppercase-first-letter-javascript/
-    capitalize: function(str) {
+    capitalize: function (str) {
       return str.charAt(0).toUpperCase() + str.slice(1);
-    }
+    },
   },
   math: {
     guid: function guid(length, radix) {
@@ -305,8 +305,26 @@ var utility = {
       }
 
       return uuid.join("").toLowerCase();
-    }
-  }
+    },
+  },
+  function: {
+    // https://davidwalsh.name/javascript-debounce-function
+    debounce: function (func, wait, immediate) {
+      var timeout;
+      return function () {
+        var context = this,
+          args = arguments;
+        var later = function () {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    },
+  },
   // crypto: {
   //     hash: function hash(pwd, salt, fn) {
 
