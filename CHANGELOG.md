@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/ciro-maciel/utility/compare/v1.2.0...v2.0.0) (2021-02-26)
+
+
+### Features
+
+* **rollup:** add rollup and new structure ([bf4dad4](https://github.com/ciro-maciel/utility/commit/bf4dad4d78395456bab43639764e3a874a09d05c))
+
+
+### BREAKING CHANGES
+
+* **rollup:** initial  2.0
+
 # [1.2.0](https://github.com/ciro-maciel/utility/compare/v1.1.0...v1.2.0) (2021-02-26)
 
 
