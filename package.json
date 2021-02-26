@@ -1,7 +1,7 @@
 {
   "name": "@ciro-maciel/utility",
   "version": "1.1.0",
-  "description": "Utility package for development Applications",
+  "description": "utility package for development Applications",
   "homepage": "https://ciro-maciel.me/",
   "license": "CC-BY-NC-SA-4.0",
   "repository": "https://github.com/ciro-maciel/utility.git",
@@ -22,8 +22,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "babel index.js --out-file main.js",
-    "watch": "nodemon -e js --ignore main.js --exec \"babel index.js --out-file main.js && yalc push --changed\" "
+    "build": "babel src/index.js --out-file main.js",
+    "watch": "nodemon -e js --ignore main.js --exec \"babel src/index.js --out-file main.js && yalc push --changed\" "
   },
   "devDependencies": {
     "@babel/cli": "^7.12.8",

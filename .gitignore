@@ -24,3 +24,6 @@ yarn-error.log*
 public/assets/js/
 public/worker.js
 public/index.html
+
+.test/*
+!.test/.gitkeep

@@ -1,3 +1,3 @@
 ## ciro-maciel - utility
 
-Utility of ciro-maciel
+utility package for development Applications
