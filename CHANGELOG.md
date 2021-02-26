@@ -1,5 +1,13 @@
 # [1.2.0](https://github.com/ciro-maciel/utility/compare/v1.1.0...v1.2.0) (2021-02-26)
 
+
+### Features
+
+* new structure ([b68765d](https://github.com/ciro-maciel/utility/commit/b68765d0b612f56369a491ea3406c9614e9f5d26))
+* new structure BREAKING CHANGE ([35fc9c3](https://github.com/ciro-maciel/utility/commit/35fc9c3003b2b47d4c033475d07eb04515c1502e))
+
+# [1.2.0](https://github.com/ciro-maciel/utility/compare/v1.1.0...v1.2.0) (2021-02-26)
+
 ### Features
 
 - new structure ([b68765d](https://github.com/ciro-maciel/utility/commit/b68765d0b612f56369a491ea3406c9614e9f5d26))
