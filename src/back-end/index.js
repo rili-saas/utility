@@ -1,2 +1,4 @@
-export { default as management } from "./management";
-export { default as persistence } from "./persistence";
+import management from "./management";
+import persistence from "./persistence";
+
+export default { management, persistence };

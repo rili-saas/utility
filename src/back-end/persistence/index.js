@@ -1,2 +1,4 @@
-export { default as databases } from "./databases";
-export { default as UnitOfWork } from "./unity-of-work";
+import databases from "./databases";
+import UnitOfWork from "./unity-of-work";
+
+export default { databases, UnitOfWork };

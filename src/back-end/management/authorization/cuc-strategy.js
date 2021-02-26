@@ -1,15 +1,15 @@
-module.exports = data => {
+export default (data) => {
   if (!data) {
-    const error = new Error('The cuc is missing')
+    const error = new Error("The cuc is missing");
 
-    error.code = 'MISSING_CUC'
-    error.status = 401
+    error.code = "MISSING_CUC";
+    error.status = 401;
 
-    throw error
+    throw error;
   }
 
   return {
     user: data,
-    authenticated: true
-  }
-}
+    authenticated: true,
+  };
+};

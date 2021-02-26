@@ -1,1 +1,3 @@
-export { default as useUpdate } from "./use-update";
+import useUpdate from "./use-update";
+
+export default { useUpdate };

@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 
 const { SECRET } = process.env;
 
-module.exports = (token) => {
+export default (token) => {
   if (!token) {
     const error = new Error("The api token is missing");
 

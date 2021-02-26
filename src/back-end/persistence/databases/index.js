@@ -1,1 +1,3 @@
-export { default as Dynamo } from "./dynamo";
+import Dynamo from "./dynamo";
+
+export default { Dynamo };

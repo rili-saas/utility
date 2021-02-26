@@ -13,7 +13,7 @@
     "ciro-maciel"
   ],
   "private": false,
-  "main": "main.js",
+  "main": "dist/main.js",
   "author": {
     "name": "Ciro Cesar Maciel",
     "email": "me@ciro-maciel.me"
@@ -22,18 +22,15 @@
     "access": "public"
   },
   "scripts": {
-    "build": "babel src/** --out-file main.js",
-    "watch": "nodemon -e js --ignore main.js --exec \"babel src/** --out-file main.js && yalc push --changed\" "
+    "build": "rollup -c",
+    "watch": "rollup -c -w"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.8",
-    "@babel/core": "^7.12.9",
-    "@babel/node": "^7.12.6",
-    "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/preset-env": "^7.12.7",
+    "@rollup/plugin-node-resolve": "^11.2.0",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
-    "nodemon": "^2.0.6",
+    "rollup": "^2.40.0",
+    "rollup-plugin-terser": "^7.0.2",
     "semantic-release": "^17.2.1"
   },
   "release": {
@@ -62,13 +59,5 @@
       ]
     ],
     "preset": "angular"
-  },
-  "babel": {
-    "presets": [
-      "@babel/env"
-    ],
-    "plugins": [
-      "@babel/proposal-class-properties"
-    ]
   }
 }

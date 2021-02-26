@@ -2,7 +2,7 @@ import { config, DynamoDB } from "aws-sdk";
 
 const IS_OFFLINE = process.env.IS_OFFLINE;
 
-export default class Database {
+export default class Dynamo {
   constructor(
     settings = {
       convertEmptyValues: true,
