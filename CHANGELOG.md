@@ -23,6 +23,21 @@
 
 ### Features
 
+* coment ([a56a8be](https://github.com/ciro-maciel/utility/commit/a56a8bead0d3c2c7b1f4765b655cc525b756479a))
+* **rollup:** add rollup ([e543915](https://github.com/ciro-maciel/utility/commit/e543915fc208a8f17491080e2cf13a6e391034ea))
+* new structure ([b68765d](https://github.com/ciro-maciel/utility/commit/b68765d0b612f56369a491ea3406c9614e9f5d26))
+* new structure BREAKING CHANGE ([35fc9c3](https://github.com/ciro-maciel/utility/commit/35fc9c3003b2b47d4c033475d07eb04515c1502e))
+
+# [1.2.0](https://github.com/ciro-maciel/utility/compare/v1.1.0...v1.2.0) (2021-02-26)
+
+
+### Bug Fixes
+
+* wip ([b16a7d7](https://github.com/ciro-maciel/utility/commit/b16a7d78265e773e9ba0ca92b1d46050b5f9a73b))
+
+
+### Features
+
 * **rollup:** add rollup ([e543915](https://github.com/ciro-maciel/utility/commit/e543915fc208a8f17491080e2cf13a6e391034ea))
 * new structure ([b68765d](https://github.com/ciro-maciel/utility/commit/b68765d0b612f56369a491ea3406c9614e9f5d26))
 * new structure BREAKING CHANGE ([35fc9c3](https://github.com/ciro-maciel/utility/commit/35fc9c3003b2b47d4c033475d07eb04515c1502e))
