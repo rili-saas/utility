@@ -1,5 +1,6 @@
-const Repository = require("./repositories");
-module.exports = class UnitOfWork {
+import Repository from "./repositories";
+
+export default class UnitOfWork {
   constructor(database, tableName) {
     Object.assign(this, { database, tableName });
 
@@ -15,4 +16,4 @@ module.exports = class UnitOfWork {
 
     return repository;
   }
-};
+}

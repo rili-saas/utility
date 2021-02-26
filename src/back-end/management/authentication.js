@@ -14,7 +14,7 @@ const validate = (resolver) => {
   return baseResolver;
 };
 
-module.exports = validate((_, __, { auth }) => {
+export default validate((_, __, { auth }) => {
   if (!auth || !auth.authenticated) {
     const {
       message = "Not Authenticated",

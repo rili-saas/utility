@@ -22,8 +22,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "babel src/index.js --out-file main.js",
-    "watch": "nodemon -e js --ignore main.js --exec \"babel src/index.js --out-file main.js && yalc push --changed\" "
+    "build": "babel src/** --out-file main.js",
+    "watch": "nodemon -e js --ignore main.js --exec \"babel src/** --out-file main.js && yalc push --changed\" "
   },
   "devDependencies": {
     "@babel/cli": "^7.12.8",

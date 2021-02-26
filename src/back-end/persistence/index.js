@@ -1,7 +1,2 @@
-const databases = require("./databases");
-const UnitOfWork = require("./unity-of-work");
-
-module.exports = {
-  databases,
-  UnitOfWork,
-};
+export { default as databases } from "./databases";
+export { default as UnitOfWork } from "./unity-of-work";

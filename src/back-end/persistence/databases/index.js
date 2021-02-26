@@ -1,5 +1,1 @@
-const Dynamo = require("./dynamo");
-
-module.exports = {
-  Dynamo
-};
+export { default as Dynamo } from "./dynamo";

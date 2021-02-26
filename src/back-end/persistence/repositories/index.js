@@ -1,9 +1,7 @@
-const AbstractRepository = require("./abstract");
+import AbstractRepository from "./abstract";
 
-module.exports = class Repository extends (
-  AbstractRepository
-) {
+export default class Repository extends AbstractRepository {
   constructor(database, tableName) {
     super(database, tableName);
   }
-};
+}

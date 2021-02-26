@@ -1,4 +1,4 @@
-module.exports = class AbstractRepository {
+export default class AbstractRepository {
   constructor(database, tableName) {
     Object.assign(this, { database, tableName });
   }
@@ -36,4 +36,4 @@ module.exports = class AbstractRepository {
   async delete(key) {
     return this.database.withTable(this.tableName).delete(key);
   }
-};
+}

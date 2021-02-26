@@ -3,7 +3,7 @@ const { omitBy, isNil } = require("lodash");
 
 const IS_OFFLINE = process.env.IS_OFFLINE;
 
-module.exports = class Database {
+export default class Database {
   constructor(
     settings = {
       convertEmptyValues: true,
@@ -344,7 +344,7 @@ module.exports = class Database {
       items,
     };
   }
-};
+}
 
 const removeEmptyStringAndNullElements = (obj) => {
   for (const prop in obj) {

@@ -1,11 +1,5 @@
-const authentication = require("./authentication");
-const Authorization = require("./authorization");
-const cucAuthorizationStrategy = require("./authorization/cuc-strategy");
-const jwtAuthorizationStrategy = require("./authorization/jwt-strategy");
+export { default as authentication } from "./authentication";
+export { default as Authorization } from "./authorization";
 
-module.exports = {
-  authentication,
-  Authorization,
-  cucAuthorizationStrategy,
-  jwtAuthorizationStrategy,
-};
+export { default as cucAuthorizationStrategy } from "./authorization/cuc-strategy";
+export { default as jwtAuthorizationStrategy } from "./authorization/jwt-strategy";
