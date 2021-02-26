@@ -237,6 +237,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
+var _awsSdk = require("aws-sdk");
+
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
@@ -267,14 +269,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var _require = require("aws-sdk"),
-    config = _require.config,
-    DynamoDB = _require.DynamoDB;
-
-var _require2 = require("lodash"),
-    omitBy = _require2.omitBy,
-    isNil = _require2.isNil;
-
 var IS_OFFLINE = process.env.IS_OFFLINE;
 
 var Database = /*#__PURE__*/function () {
@@ -293,11 +287,11 @@ var Database = /*#__PURE__*/function () {
       settings.secretAccessKey = "DEFAULT_SECRET";
     }
 
-    config.update(settings);
+    _awsSdk.config.update(settings);
 
     try {
-      var dynamo = new DynamoDB();
-      var client = new DynamoDB.DocumentClient();
+      var dynamo = new _awsSdk.DynamoDB();
+      var client = new _awsSdk.DynamoDB.DocumentClient();
       Object.assign(this, {
         client: client,
         dynamo: dynamo
@@ -444,58 +438,45 @@ var Database = /*#__PURE__*/function () {
       }
 
       return put;
-    }()
-  }, {
-    key: "updateByKey",
-    value: function () {
-      var _updateByKey = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(key, data) {
-        var dataClean, dataAttrs, expressionAttributeNames, updateExpression, expressionAttributeValues;
-        return regeneratorRuntime.wrap(function _callee4$(_context4) {
-          while (1) {
-            switch (_context4.prev = _context4.next) {
-              case 0:
-                dataClean = omitBy(data, function (item, keyName) {
-                  return Object.keys(key).includes(keyName) || isNil(item);
-                });
-                dataAttrs = Object.keys(dataClean);
-                expressionAttributeNames = dataAttrs.reduce(function (acc, keyName) {
-                  return _objectSpread(_objectSpread({}, acc), {}, _defineProperty({}, "#".concat(keyName), keyName));
-                }, {});
-                updateExpression = "set ".concat(dataAttrs.map(function (keyName) {
-                  return "#".concat(keyName, " = :").concat(keyName);
-                }).join(", "));
-                expressionAttributeValues = dataAttrs.reduce(function (acc, keyName) {
-                  return _objectSpread(_objectSpread({}, acc), {}, _defineProperty({}, ":".concat(keyName), dataClean[keyName]));
-                }, {});
-                return _context4.abrupt("return", this.update(key, {
-                  updateExpression: updateExpression,
-                  expressionAttributeNames: expressionAttributeNames,
-                  expressionAttributeValues: expressionAttributeValues
-                }));
+    }() // async updateByKey(key, data) {
+    //   const dataClean = omitBy(
+    //     data,
+    //     (item, keyName) => Object.keys(key).includes(keyName) || isNil(item)
+    //   );
+    //   const dataAttrs = Object.keys(dataClean);
+    //   const expressionAttributeNames = dataAttrs.reduce(
+    //     (acc, keyName) => ({
+    //       ...acc,
+    //       [`#${keyName}`]: keyName,
+    //     }),
+    //     {}
+    //   );
+    //   const updateExpression = `set ${dataAttrs
+    //     .map((keyName) => `#${keyName} = :${keyName}`)
+    //     .join(", ")}`;
+    //   const expressionAttributeValues = dataAttrs.reduce(
+    //     (acc, keyName) => ({
+    //       ...acc,
+    //       [`:${keyName}`]: dataClean[keyName],
+    //     }),
+    //     {}
+    //   );
+    //   return this.update(key, {
+    //     updateExpression,
+    //     expressionAttributeNames,
+    //     expressionAttributeValues,
+    //   });
+    // }
 
-              case 6:
-              case "end":
-                return _context4.stop();
-            }
-          }
-        }, _callee4, this);
-      }));
-
-      function updateByKey(_x4, _x5) {
-        return _updateByKey.apply(this, arguments);
-      }
-
-      return updateByKey;
-    }()
   }, {
     key: "update",
     value: function () {
-      var _update = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(key, _ref) {
+      var _update = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(key, _ref) {
         var updateExpression, expressionAttributeNames, expressionAttributeValues, _ref$returnValues, returnValues, params, result;
 
-        return regeneratorRuntime.wrap(function _callee5$(_context5) {
+        return regeneratorRuntime.wrap(function _callee4$(_context4) {
           while (1) {
-            switch (_context5.prev = _context5.next) {
+            switch (_context4.prev = _context4.next) {
               case 0:
                 updateExpression = _ref.updateExpression, expressionAttributeNames = _ref.expressionAttributeNames, expressionAttributeValues = _ref.expressionAttributeValues, _ref$returnValues = _ref.returnValues, returnValues = _ref$returnValues === void 0 ? "UPDATED_NEW" : _ref$returnValues;
                 params = {
@@ -506,29 +487,29 @@ var Database = /*#__PURE__*/function () {
                   ExpressionAttributeValues: expressionAttributeValues,
                   ReturnValues: returnValues
                 };
-                _context5.prev = 2;
-                _context5.next = 5;
+                _context4.prev = 2;
+                _context4.next = 5;
                 return this.client.update(params).promise();
 
               case 5:
-                result = _context5.sent;
-                return _context5.abrupt("return", result.Attributes);
+                result = _context4.sent;
+                return _context4.abrupt("return", result.Attributes);
 
               case 9:
-                _context5.prev = 9;
-                _context5.t0 = _context5["catch"](2);
-                console.error(_context5.t0);
-                throw _context5.t0;
+                _context4.prev = 9;
+                _context4.t0 = _context4["catch"](2);
+                console.error(_context4.t0);
+                throw _context4.t0;
 
               case 13:
               case "end":
-                return _context5.stop();
+                return _context4.stop();
             }
           }
-        }, _callee5, this, [[2, 9]]);
+        }, _callee4, this, [[2, 9]]);
       }));
 
-      function update(_x6, _x7) {
+      function update(_x4, _x5) {
         return _update.apply(this, arguments);
       }
 
@@ -537,11 +518,11 @@ var Database = /*#__PURE__*/function () {
   }, {
     key: "delete",
     value: function () {
-      var _delete2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6(key, condition) {
+      var _delete2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(key, condition) {
         var params;
-        return regeneratorRuntime.wrap(function _callee6$(_context6) {
+        return regeneratorRuntime.wrap(function _callee5$(_context5) {
           while (1) {
-            switch (_context6.prev = _context6.next) {
+            switch (_context5.prev = _context5.next) {
               case 0:
                 params = {
                   TableName: this.tableName,
@@ -552,11 +533,45 @@ var Database = /*#__PURE__*/function () {
                   params.ConditionExpression = condition.expression, params.ExpressionAttributeValues = condition.values;
                 }
 
-                _context6.next = 4;
+                _context5.next = 4;
                 return this.client["delete"](params).promise();
 
               case 4:
-                return _context6.abrupt("return", true);
+                return _context5.abrupt("return", true);
+
+              case 5:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5, this);
+      }));
+
+      function _delete(_x6, _x7) {
+        return _delete2.apply(this, arguments);
+      }
+
+      return _delete;
+    }()
+  }, {
+    key: "findByKey",
+    value: function () {
+      var _findByKey = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6(key) {
+        var params, result;
+        return regeneratorRuntime.wrap(function _callee6$(_context6) {
+          while (1) {
+            switch (_context6.prev = _context6.next) {
+              case 0:
+                params = {
+                  TableName: this.tableName,
+                  Key: key
+                };
+                _context6.next = 3;
+                return this.client.get(params).promise();
+
+              case 3:
+                result = _context6.sent;
+                return _context6.abrupt("return", result.Item);
 
               case 5:
               case "end":
@@ -566,16 +581,16 @@ var Database = /*#__PURE__*/function () {
         }, _callee6, this);
       }));
 
-      function _delete(_x8, _x9) {
-        return _delete2.apply(this, arguments);
+      function findByKey(_x8) {
+        return _findByKey.apply(this, arguments);
       }
 
-      return _delete;
+      return findByKey;
     }()
   }, {
-    key: "findByKey",
+    key: "get",
     value: function () {
-      var _findByKey = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7(key) {
+      var _get = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7(key) {
         var params, result;
         return regeneratorRuntime.wrap(function _callee7$(_context7) {
           while (1) {
@@ -600,41 +615,7 @@ var Database = /*#__PURE__*/function () {
         }, _callee7, this);
       }));
 
-      function findByKey(_x10) {
-        return _findByKey.apply(this, arguments);
-      }
-
-      return findByKey;
-    }()
-  }, {
-    key: "get",
-    value: function () {
-      var _get = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee8(key) {
-        var params, result;
-        return regeneratorRuntime.wrap(function _callee8$(_context8) {
-          while (1) {
-            switch (_context8.prev = _context8.next) {
-              case 0:
-                params = {
-                  TableName: this.tableName,
-                  Key: key
-                };
-                _context8.next = 3;
-                return this.client.get(params).promise();
-
-              case 3:
-                result = _context8.sent;
-                return _context8.abrupt("return", result.Item);
-
-              case 5:
-              case "end":
-                return _context8.stop();
-            }
-          }
-        }, _callee8, this);
-      }));
-
-      function get(_x11) {
+      function get(_x9) {
         return _get.apply(this, arguments);
       }
 
@@ -643,27 +624,27 @@ var Database = /*#__PURE__*/function () {
   }, {
     key: "findAll",
     value: function () {
-      var _findAll = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee9() {
+      var _findAll = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee8() {
         var response;
-        return regeneratorRuntime.wrap(function _callee9$(_context9) {
+        return regeneratorRuntime.wrap(function _callee8$(_context8) {
           while (1) {
-            switch (_context9.prev = _context9.next) {
+            switch (_context8.prev = _context8.next) {
               case 0:
-                _context9.next = 2;
+                _context8.next = 2;
                 return this.client.scan({
                   TableName: this.tableName
                 }).promise();
 
               case 2:
-                response = _context9.sent;
-                return _context9.abrupt("return", response.Items);
+                response = _context8.sent;
+                return _context8.abrupt("return", response.Items);
 
               case 4:
               case "end":
-                return _context9.stop();
+                return _context8.stop();
             }
           }
-        }, _callee9, this);
+        }, _callee8, this);
       }));
 
       function findAll() {
@@ -675,12 +656,12 @@ var Database = /*#__PURE__*/function () {
   }, {
     key: "filter",
     value: function () {
-      var _filter2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee10(_ref2) {
+      var _filter2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee9(_ref2) {
         var _ref2$indexName, indexName, _ref2$filter, _filter, _ref2$limit, limit, _ref2$skip, skip, _ref2$sort, sort, _ref2$attributesToGet, attributesToGetString, _ref2$lean, lean, _parseFilterToExpress, KeyConditionExpression, ExpressionAttributeNames, ExpressionAttributeValues, FilterExpression, params, _yield$this$client$qu, count, response, items, itensToCopy;
 
-        return regeneratorRuntime.wrap(function _callee10$(_context10) {
+        return regeneratorRuntime.wrap(function _callee9$(_context9) {
           while (1) {
-            switch (_context10.prev = _context10.next) {
+            switch (_context9.prev = _context9.next) {
               case 0:
                 _ref2$indexName = _ref2.indexName, indexName = _ref2$indexName === void 0 ? null : _ref2$indexName, _ref2$filter = _ref2.filter, _filter = _ref2$filter === void 0 ? null : _ref2$filter, _ref2$limit = _ref2.limit, limit = _ref2$limit === void 0 ? null : _ref2$limit, _ref2$skip = _ref2.skip, skip = _ref2$skip === void 0 ? null : _ref2$skip, _ref2$sort = _ref2.sort, sort = _ref2$sort === void 0 ? null : _ref2$sort, _ref2$attributesToGet = _ref2.attributesToGetString, attributesToGetString = _ref2$attributesToGet === void 0 ? null : _ref2$attributesToGet, _ref2$lean = _ref2.lean, lean = _ref2$lean === void 0 ? false : _ref2$lean;
                 _parseFilterToExpress = parseFilterToExpressions(_filter), KeyConditionExpression = _parseFilterToExpress.KeyConditionExpression, ExpressionAttributeNames = _parseFilterToExpress.ExpressionAttributeNames, ExpressionAttributeValues = _parseFilterToExpress.ExpressionAttributeValues, FilterExpression = _parseFilterToExpress.FilterExpression;
@@ -693,13 +674,13 @@ var Database = /*#__PURE__*/function () {
                   FilterExpression: FilterExpression,
                   ProjectionExpression: attributesToGetString
                 });
-                _context10.next = 5;
+                _context9.next = 5;
                 return this.client.query(_objectSpread(_objectSpread({}, params), {}, {
                   Select: "COUNT"
                 })).promise();
 
               case 5:
-                _yield$this$client$qu = _context10.sent;
+                _yield$this$client$qu = _context9.sent;
                 count = _yield$this$client$qu.Count;
 
                 if (sort) {
@@ -714,32 +695,32 @@ var Database = /*#__PURE__*/function () {
                   params.ExclusiveStartKey = skip;
                 }
 
-                _context10.next = 12;
+                _context9.next = 12;
                 return this.client.query(params).promise();
 
               case 12:
-                response = _context10.sent;
+                response = _context9.sent;
                 items = _toConsumableArray(response.Items);
                 process.env.STAGE === "test" && console.log("params", params);
                 process.env.STAGE === "test" && console.log("response", response);
 
                 if (!response.LastEvaluatedKey) {
-                  _context10.next = 27;
+                  _context9.next = 27;
                   break;
                 }
 
               case 17:
                 if (!response.LastEvaluatedKey) {
-                  _context10.next = 27;
+                  _context9.next = 27;
                   break;
                 }
 
                 params.ExclusiveStartKey = response.LastEvaluatedKey;
-                _context10.next = 21;
+                _context9.next = 21;
                 return this.client.query(params).promise();
 
               case 21:
-                response = _context10.sent;
+                response = _context9.sent;
                 process.env.STAGE === "test" && console.log("w - params", params);
                 process.env.STAGE === "test" && console.log("w - response", response);
 
@@ -751,24 +732,24 @@ var Database = /*#__PURE__*/function () {
                   items = items.concat(response.Items);
                 }
 
-                _context10.next = 17;
+                _context9.next = 17;
                 break;
 
               case 27:
-                return _context10.abrupt("return", {
+                return _context9.abrupt("return", {
                   count: count,
                   items: items
                 });
 
               case 28:
               case "end":
-                return _context10.stop();
+                return _context9.stop();
             }
           }
-        }, _callee10, this);
+        }, _callee9, this);
       }));
 
-      function filter(_x12) {
+      function filter(_x10) {
         return _filter2.apply(this, arguments);
       }
 

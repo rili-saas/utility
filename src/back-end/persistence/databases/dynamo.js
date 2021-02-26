@@ -1,5 +1,4 @@
-const { config, DynamoDB } = require("aws-sdk");
-const { omitBy, isNil } = require("lodash");
+import { config, DynamoDB } from "aws-sdk";
 
 const IS_OFFLINE = process.env.IS_OFFLINE;
 
@@ -158,38 +157,38 @@ export default class Database {
     }
   }
 
-  async updateByKey(key, data) {
-    const dataClean = omitBy(
-      data,
-      (item, keyName) => Object.keys(key).includes(keyName) || isNil(item)
-    );
-    const dataAttrs = Object.keys(dataClean);
-    const expressionAttributeNames = dataAttrs.reduce(
-      (acc, keyName) => ({
-        ...acc,
-        [`#${keyName}`]: keyName,
-      }),
-      {}
-    );
+  // async updateByKey(key, data) {
+  //   const dataClean = omitBy(
+  //     data,
+  //     (item, keyName) => Object.keys(key).includes(keyName) || isNil(item)
+  //   );
+  //   const dataAttrs = Object.keys(dataClean);
+  //   const expressionAttributeNames = dataAttrs.reduce(
+  //     (acc, keyName) => ({
+  //       ...acc,
+  //       [`#${keyName}`]: keyName,
+  //     }),
+  //     {}
+  //   );
 
-    const updateExpression = `set ${dataAttrs
-      .map((keyName) => `#${keyName} = :${keyName}`)
-      .join(", ")}`;
+  //   const updateExpression = `set ${dataAttrs
+  //     .map((keyName) => `#${keyName} = :${keyName}`)
+  //     .join(", ")}`;
 
-    const expressionAttributeValues = dataAttrs.reduce(
-      (acc, keyName) => ({
-        ...acc,
-        [`:${keyName}`]: dataClean[keyName],
-      }),
-      {}
-    );
+  //   const expressionAttributeValues = dataAttrs.reduce(
+  //     (acc, keyName) => ({
+  //       ...acc,
+  //       [`:${keyName}`]: dataClean[keyName],
+  //     }),
+  //     {}
+  //   );
 
-    return this.update(key, {
-      updateExpression,
-      expressionAttributeNames,
-      expressionAttributeValues,
-    });
-  }
+  //   return this.update(key, {
+  //     updateExpression,
+  //     expressionAttributeNames,
+  //     expressionAttributeValues,
+  //   });
+  // }
 
   async update(
     key,
