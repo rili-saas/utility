@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/ciro-maciel/utility/compare/v2.0.0...v2.1.0) (2021-02-26)
+
+
+### Features
+
+* publish in npm ([281d913](https://github.com/ciro-maciel/utility/commit/281d913081980aaf999379fa31b85e1f546ff610))
+
 # [2.0.0](https://github.com/ciro-maciel/utility/compare/v1.2.0...v2.0.0) (2021-02-26)
 
 
