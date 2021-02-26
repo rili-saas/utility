@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/ciro-maciel/utility/compare/v2.1.0...v2.1.1) (2021-02-26)
+
+
+### Bug Fixes
+
+* changelog ([355d009](https://github.com/ciro-maciel/utility/commit/355d0095bfd4f7d20d47df691e3a2db4e3b6392a))
+
 # [2.1.0](https://github.com/ciro-maciel/utility/compare/v2.0.0...v2.1.0) (2021-02-26)
 
 ### Features
