@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/ciro-maciel/utility/compare/v2.1.1...v2.1.2) (2021-02-28)
+
+
+### Bug Fixes
+
+* dist/main.js ([3304d69](https://github.com/ciro-maciel/utility/commit/3304d69dc070c5ff4d004bdb0c93573d1555f133))
+
 ## [2.1.1](https://github.com/ciro-maciel/utility/compare/v2.1.0...v2.1.1) (2021-02-26)
 
 
