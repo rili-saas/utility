@@ -1,3 +1,13 @@
+## [2.1.4](https://github.com/ciro-maciel/utility/compare/v2.1.3...v2.1.4) (2021-02-28)
+
+
+### Bug Fixes
+
+* dependency ([2bf3444](https://github.com/ciro-maciel/utility/commit/2bf3444620aa7d5d53a4d790d32ff960b09845d8))
+* dependency ([0766afd](https://github.com/ciro-maciel/utility/commit/0766afdbc709731135c8bd5d1e8fa07eaeec4185))
+* devDependencies ([b279712](https://github.com/ciro-maciel/utility/commit/b279712602e5caf29a99a05028133484b7c0f6f2))
+* update package ([7398a50](https://github.com/ciro-maciel/utility/commit/7398a50520c33e70577d7120af6c8b72242f810b))
+
 ## [2.1.3](https://github.com/ciro-maciel/utility/compare/v2.1.2...v2.1.3) (2021-02-28)
 
 
