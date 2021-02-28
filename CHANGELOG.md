@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/ciro-maciel/utility/compare/v2.1.2...v2.1.3) (2021-02-28)
+
+
+### Bug Fixes
+
+* peerDependencies ([58a06d4](https://github.com/ciro-maciel/utility/commit/58a06d43d37d4a3768b3047d6bafa541c962a104))
+
 ## [2.1.2](https://github.com/ciro-maciel/utility/compare/v2.1.1...v2.1.2) (2021-02-28)
 
 
