@@ -1,5 +1,5 @@
 // https://stackoverflow.com/a/53180013/8589328
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect } from "react";
 
 export default (fn, inputs) => {
   const didMountRef = useRef(false);

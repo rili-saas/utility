@@ -1,26 +1,24 @@
 import { nodeResolve } from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
 import { terser } from "rollup-plugin-terser";
 
 import pkg from "./package.json";
 
 export default {
-  // UMD
-  plugins: [nodeResolve()],
+  plugins: [nodeResolve(), commonjs()],
   input: "src/index.js",
   output: [
     {
       file: `dist/main.min.js`,
-      format: "umd",
+      format: "cjs",
       name: `${pkg.name}`,
-      esModule: false,
       plugins: [terser()],
       sourcemap: true,
     },
     {
       file: `dist/main.js`,
-      format: "umd",
+      format: "cjs",
       name: `${pkg.name}`,
-      esModule: false,
     },
   ],
 };
