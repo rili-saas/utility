@@ -16,11 +16,11 @@ export default {
       plugins: [terser()],
       sourcemap: true,
     },
-    // {
-    //   file: `dist/main.js`,
-    //   format: "umd",
-    //   name: `${pkg.name}`,
-    //   esModule: false,
-    // },
+    {
+      file: `dist/main.js`,
+      format: "umd",
+      name: `${pkg.name}`,
+      esModule: false,
+    },
   ],
 };
