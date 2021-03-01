@@ -1,3 +1,16 @@
+# [2.2.0](https://github.com/ciro-maciel/utility/compare/v2.1.5...v2.2.0) (2021-03-01)
+
+
+### Bug Fixes
+
+* docs ([cc9b4a1](https://github.com/ciro-maciel/utility/commit/cc9b4a1fcbebfd2d226b1a1b595602fa68dc0a6e))
+* docs ([b0ddbd8](https://github.com/ciro-maciel/utility/commit/b0ddbd83fb6403e63c9005bfedb6b81af3ff75a1))
+
+
+### Features
+
+* **utility:** add http functions ([d498558](https://github.com/ciro-maciel/utility/commit/d49855802ec45f9753be2c7c1fad91e45653a666))
+
 ## [2.1.5](https://github.com/ciro-maciel/utility/compare/v2.1.4...v2.1.5) (2021-02-28)
 
 
