@@ -9,7 +9,7 @@ export default (data) => {
   }
 
   return {
-    user: data,
+    account: data,
     authenticated: true,
   };
 };
