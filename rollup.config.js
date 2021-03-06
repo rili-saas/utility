@@ -6,19 +6,25 @@ import { terser } from "rollup-plugin-terser";
 import pkg from "./package.json";
 
 export default {
-  plugins: [nodeResolve(), json(), commonjs()],
+  plugins: [
+    nodeResolve(),
+    json(),
+    // commonjs({
+    //   include: "node_modules/**",
+    // }),
+  ],
   input: "src/index.js",
   output: [
     {
       file: `dist/main.min.js`,
-      format: "cjs",
+      format: "es",
       name: `${pkg.name}`,
       plugins: [terser()],
       sourcemap: true,
     },
     {
       file: `dist/main.js`,
-      format: "cjs",
+      format: "es",
       name: `${pkg.name}`,
     },
   ],

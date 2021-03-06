@@ -1,9 +1,5 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var awsSdk = require('aws-sdk');
-var react = require('react');
+import { config, DynamoDB } from 'aws-sdk';
+import { useRef, useEffect } from 'react';
 
 const validate = (resolver) => {
   const baseResolver = resolver;
@@ -136,11 +132,11 @@ class Dynamo {
       settings.accessKeyId = "DEFAULT_ACCESS_KEY";
       settings.secretAccessKey = "DEFAULT_SECRET";
     }
-    awsSdk.config.update(settings);
+    config.update(settings);
     try {
-      const dynamo = new awsSdk.DynamoDB();
+      const dynamo = new DynamoDB();
 
-      const client = new awsSdk.DynamoDB.DocumentClient();
+      const client = new DynamoDB.DocumentClient();
 
       Object.assign(this, { client, dynamo });
     } catch (error) {
@@ -705,9 +701,9 @@ var index$2 = { management, persistence };
 // https://stackoverflow.com/a/53180013/8589328
 
 var useUpdate = (fn, inputs) => {
-  const didMountRef = react.useRef(false);
+  const didMountRef = useRef(false);
 
-  react.useEffect(() => {
+  useEffect(() => {
     if (didMountRef.current) fn();
     else didMountRef.current = true;
   }, inputs);
@@ -883,6 +879,4 @@ var http = {
 
 var index = { math, string, func, network, http };
 
-exports.backEnd = index$2;
-exports.frontEnd = index$1;
-exports.utility = index;
+export { index$2 as backEnd, index$1 as frontEnd, index as utility };
