@@ -1,3 +1,10 @@
+## [2.2.6](https://github.com/ciro-maciel/utility/compare/v2.2.5...v2.2.6) (2021-03-07)
+
+
+### Bug Fixes
+
+* dependency ([a37e3ca](https://github.com/ciro-maciel/utility/commit/a37e3ca554ef7bf205978646af951eb4938b92cb))
+
 ## [2.2.5](https://github.com/ciro-maciel/utility/compare/v2.2.4...v2.2.5) (2021-03-06)
 
 
