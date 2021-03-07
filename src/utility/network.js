@@ -1,4 +1,4 @@
-export default {
+const network = {
   // http://ccoenraets.github.io/es6-tutorial-data/promisify/
   // http://stackoverflow.com/questions/28921127/how-to-wait-for-a-javascript-promise-to-resolve-before-resuming-function
   // https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHttpRequest
@@ -36,7 +36,7 @@ export default {
   info: {
     data: null,
     load: function () {
-      utility.net
+      network
         .request({
           // url:
           //   "http://api.ipstack.com/check?access_key=4e033eb864b6a92fa9027da214a67ccc&format=1"
@@ -45,13 +45,15 @@ export default {
         })
         .then(function (data) {
           if (data.code === 200) {
-            utility.net.info.data = JSON.parse(data.message);
-            // console.log(utility.net.info.data)
+            network.info.data = JSON.parse(data.message);
+            // console.log(network.info.data)
           }
         })
         .catch(function (error) {
-          utility.net.info.data = {};
+          network.info.data = {};
         });
     },
   },
 };
+
+export default network;
