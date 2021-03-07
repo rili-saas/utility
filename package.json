@@ -13,6 +13,8 @@
     "ciro-maciel"
   ],
   "private": false,
+  "main": "dist/utility.cjs.js",
+  "module": "dist/utility.esm.js",
   "files": [
     "dist"
   ],

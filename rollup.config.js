@@ -5,13 +5,13 @@ export default [
     plugins: [nodeResolve()],
     input: "src/backend/index.js",
     external: ["aws-sdk"],
-    output: [{ file: "dist/backend.js", format: "cjs" }],
+    output: [{ file: "clients/backend.js", format: "cjs" }],
   },
   {
     plugins: [nodeResolve()],
     input: "src/frontend/index.js",
     external: ["react"],
-    output: [{ file: "dist/frontend.js", format: "es" }],
+    output: [{ file: "clients/frontend.js", format: "es" }],
   },
   {
     plugins: [nodeResolve()],
