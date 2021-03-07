@@ -1,6 +1,6 @@
 import { nodeResolve } from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
+import externalGlobals from "rollup-plugin-external-globals";
 import { terser } from "rollup-plugin-terser";
 
 import pkg from "./package.json";
@@ -9,9 +9,10 @@ export default {
   plugins: [
     nodeResolve(),
     json(),
-    // commonjs({
-    //   include: "node_modules/**",
-    // }),
+    externalGlobals({
+      "aws-sdk": "aws-sdk",
+      react: "react",
+    }),
   ],
   input: "src/index.js",
   output: [
@@ -21,19 +22,11 @@ export default {
       name: `${pkg.name}`,
       plugins: [terser()],
       sourcemap: true,
-      globals: {
-        "aws-sdk": "aws-sdk",
-        react: "react",
-      },
     },
     {
       file: `dist/main.js`,
       format: "umd",
       name: `${pkg.name}`,
-      globals: {
-        "aws-sdk": "aws-sdk",
-        react: "react",
-      },
     },
   ],
 };

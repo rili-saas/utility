@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('aws-sdk'), require('react')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'aws-sdk', 'react'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['@ciro-maciel/utility'] = {}, global['aws-sdk'], global.react));
-}(this, (function (exports, awsSdk, react) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+  typeof define === 'function' && define.amd ? define(['exports'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['@ciro-maciel/utility'] = {}));
+}(this, (function (exports) { 'use strict';
 
   const validate = (resolver) => {
     const baseResolver = resolver;
@@ -135,11 +135,11 @@
         settings.accessKeyId = "DEFAULT_ACCESS_KEY";
         settings.secretAccessKey = "DEFAULT_SECRET";
       }
-      awsSdk.config.update(settings);
+      aws-sdk.config.update(settings);
       try {
-        const dynamo = new awsSdk.DynamoDB();
+        const dynamo = new aws-sdk.DynamoDB();
 
-        const client = new awsSdk.DynamoDB.DocumentClient();
+        const client = new aws-sdk.DynamoDB.DocumentClient();
 
         Object.assign(this, { client, dynamo });
       } catch (error) {
@@ -702,6 +702,7 @@
   var index$2 = { management, persistence };
 
   // https://stackoverflow.com/a/53180013/8589328
+
 
   var useUpdate = (fn, inputs) => {
     const didMountRef = react.useRef(false);
