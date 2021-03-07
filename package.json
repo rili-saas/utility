@@ -16,7 +16,7 @@
   "main": "dist/utility.cjs.js",
   "module": "dist/utility.esm.js",
   "files": [
-    "dist"
+    "clients"
   ],
   "author": {
     "name": "Ciro Cesar Maciel",
