@@ -1,3 +1,10 @@
+## [2.2.12](https://github.com/ciro-maciel/utility/compare/v2.2.11...v2.2.12) (2021-03-07)
+
+
+### Bug Fixes
+
+* files ([6a5952a](https://github.com/ciro-maciel/utility/commit/6a5952a298cede6f27920eee97ca9095771243b3))
+
 ## [2.2.11](https://github.com/ciro-maciel/utility/compare/v2.2.10...v2.2.11) (2021-03-07)
 
 
