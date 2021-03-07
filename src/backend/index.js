@@ -1,4 +1,4 @@
 import management from "./management";
 import persistence from "./persistence";
 
-export default { management, persistence };
+export { management, persistence };
