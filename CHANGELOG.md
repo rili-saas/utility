@@ -1,3 +1,10 @@
+## [2.2.13](https://github.com/ciro-maciel/utility/compare/v2.2.12...v2.2.13) (2021-03-07)
+
+
+### Bug Fixes
+
+* network ([7a9ac37](https://github.com/ciro-maciel/utility/commit/7a9ac37c7c0dddb11da7469939afff19b026b118))
+
 ## [2.2.12](https://github.com/ciro-maciel/utility/compare/v2.2.11...v2.2.12) (2021-03-07)
 
 
