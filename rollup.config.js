@@ -17,15 +17,23 @@ export default {
   output: [
     {
       file: `dist/main.min.js`,
-      format: "es",
+      format: "umd",
       name: `${pkg.name}`,
       plugins: [terser()],
       sourcemap: true,
+      globals: {
+        "aws-sdk": "aws-sdk",
+        react: "react",
+      },
     },
     {
       file: `dist/main.js`,
-      format: "es",
+      format: "umd",
       name: `${pkg.name}`,
+      globals: {
+        "aws-sdk": "aws-sdk",
+        react: "react",
+      },
     },
   ],
 };
