@@ -4,7 +4,7 @@ export default [
   {
     plugins: [nodeResolve()],
     input: "src/backend/index.js",
-    external: ["aws-sdk"],
+    external: ["aws-sdk", "jsonwebtoken"],
     output: [{ file: "clients/backend.js", format: "cjs" }],
   },
   {
@@ -17,7 +17,7 @@ export default [
     plugins: [nodeResolve()],
     input: "src/utility/index.js",
     output: [
-      { file: "dist/utility.cjs.js", format: "cjs" },
+      { file: "dist/utility.cjs.js", format: "cjs", exports: "default" },
       { file: "dist/utility.esm.js", format: "es" },
     ],
   },
