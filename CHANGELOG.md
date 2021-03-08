@@ -1,3 +1,10 @@
+## [2.2.14](https://github.com/ciro-maciel/utility/compare/v2.2.13...v2.2.14) (2021-03-08)
+
+
+### Bug Fixes
+
+* es module ([6e123dc](https://github.com/ciro-maciel/utility/commit/6e123dc4a46d7b3a5a94ad202503accc00ef970f))
+
 ## [2.2.13](https://github.com/ciro-maciel/utility/compare/v2.2.12...v2.2.13) (2021-03-07)
 
 
