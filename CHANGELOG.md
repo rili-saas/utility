@@ -1,3 +1,10 @@
+## [2.3.2](https://github.com/ciro-maciel/utility/compare/v2.3.1...v2.3.2) (2021-03-12)
+
+
+### Bug Fixes
+
+* useNetInfo ([6b672a3](https://github.com/ciro-maciel/utility/commit/6b672a3f391ad9654606e7d5fa0fb858f33e2ba2))
+
 ## [2.3.1](https://github.com/ciro-maciel/utility/compare/v2.3.0...v2.3.1) (2021-03-12)
 
 
