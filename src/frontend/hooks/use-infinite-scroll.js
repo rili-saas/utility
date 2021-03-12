@@ -1,6 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
-
 //https://github.com/Upmostly/react-hooks-infinite-scroll
+import { useState, useEffect } from 'react';
 
 const useInfiniteScroll = (callback) => {
   const [isFetching, setIsFetching] = useState(false);
@@ -27,19 +26,4 @@ const useInfiniteScroll = (callback) => {
   return [isFetching, setIsFetching];
 };
 
-// https://stackoverflow.com/a/53180013/8589328
-
-var useUpdate = (fn, inputs) => {
-  const didMountRef = useRef(false);
-
-  useEffect(() => {
-    if (didMountRef.current) fn();
-    else didMountRef.current = true;
-  }, inputs);
-};
-
-// https://pt-br.reactjs.org/docs/hooks-custom.html
-
-var index = { useUpdate, useInfiniteScroll, useUpdate };
-
-export { index as hooks };
+export default useInfiniteScroll;

@@ -6,7 +6,7 @@ This is our shared package for development Applications used for front-end and b
 
 ### Getting Started
 
-Install this package and Webpack via NPM:
+Install this package via NPM:
 
 ```
 npm install @ciro-maciel/utility
