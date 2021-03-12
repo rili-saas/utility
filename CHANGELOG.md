@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/ciro-maciel/utility/compare/v2.2.15...v2.3.0) (2021-03-12)
+
+
+### Features
+
+* new hooks ([b950895](https://github.com/ciro-maciel/utility/commit/b950895e7c762cf6b000e71de3890ddd45c75d32))
+
 ## [2.2.15](https://github.com/ciro-maciel/utility/compare/v2.2.14...v2.2.15) (2021-03-08)
 
 
