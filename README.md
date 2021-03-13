@@ -1,4 +1,4 @@
-## ciro-maciel - utility [![deploy to Prod](https://github.com/ciro-maciel/utility/actions/workflows/toProd.yml/badge.svg)](https://github.com/ciro-maciel/utility/actions/workflows/toProd.yml)
+## ciro-maciel - utility [![deploy to Prod](https://github.com/ciro-maciel/utility/actions/workflows/toProd.yml/badge.svg)](https://github.com/ciro-maciel/utility/actions/workflows/toProd.yml) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@ciro-maciel/utility) ![npm](https://img.shields.io/npm/v/@ciro-maciel/utility) ![NPM](https://img.shields.io/npm/l/@ciro-maciel/utility)
 
 utility package for development Applications
 
