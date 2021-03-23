@@ -1,16 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 const Widget = function (props) {
   return (
     <div
       style={{
-        backgroundColor: '#ffffff',
-        boxShadow: '0px 0px 10px 0px #ddd',
-        marginBottom: '12px',
-        borderRadius: '8px',
-        display: 'flex',
-        flexDirection: 'column',
+        backgroundColor: "#ffffff",
+        boxShadow: "0px 0px 10px 0px #ddd",
+        marginBottom: "12px",
+        borderRadius: "8px",
+        display: "flex",
+        flexDirection: "column",
         ...props.style,
       }}
     >
@@ -20,15 +20,15 @@ const Widget = function (props) {
 };
 // widget
 
-// // header
+// header
 function HeaderContent(props) {
   return (
     <div
       style={{
-        height: '40px',
-        display: 'flex',
-        alignItems: 'center',
-        margin: '0 10px',
+        height: "40px",
+        display: "flex",
+        alignItems: "center",
+        margin: "0 10px",
       }}
     >
       {props.children}
@@ -40,10 +40,10 @@ const HeaderIcon = function (props) {
   return (
     <div
       style={{
-        marginRight: '5px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        marginRight: "5px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
       {...props}
     >
@@ -55,7 +55,7 @@ const HeaderIcon = function (props) {
 function HeaderText(props) {
   const { children, style } = props;
   return (
-    <h3 {...props} style={{ margin: '0', fontWeight: 'bold', ...style }}>
+    <h3 {...props} style={{ margin: "0", fontWeight: "bold", ...style }}>
       {children}
     </h3>
   );
@@ -69,10 +69,10 @@ const HeaderStatus = function (props) {
   return (
     <div
       style={{
-        flex: '1',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        flex: "1",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
       {...props}
     >
@@ -86,7 +86,11 @@ HeaderStatus.propTypes = {
 
 function HeaderOption(props) {
   const { children, isIcon } = props;
-  return <div style={{ marginLeft: 'auto', marginRight: isIcon && '-5px' }}>{children}</div>;
+  return (
+    <div style={{ marginLeft: "auto", marginRight: isIcon && "-5px" }}>
+      {children}
+    </div>
+  );
 }
 HeaderOption.propTypes = {
   children: PropTypes.node,
@@ -103,7 +107,7 @@ HeaderContent.Option = HeaderOption;
 function BodyContent(props) {
   const { children, style } = props;
   return (
-    <div {...props} style={{ flex: '1', padding: '0px 10px 10px', ...style }}>
+    <div {...props} style={{ flex: "1", padding: "0px 10px 10px", ...style }}>
       {children}
     </div>
   );
