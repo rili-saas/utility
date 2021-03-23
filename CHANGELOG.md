@@ -1,3 +1,15 @@
+# [2.4.0](https://github.com/ciro-maciel/utility/compare/v2.3.3...v2.4.0) (2021-03-23)
+
+
+### Bug Fixes
+
+* references ([a4c224b](https://github.com/ciro-maciel/utility/commit/a4c224be7479ecbcde00b10840506340df97c158))
+
+
+### Features
+
+* **frontend:** add components ([45243fa](https://github.com/ciro-maciel/utility/commit/45243fa4efa257d199830b6795eff034f947b8b6))
+
 ## [2.3.3](https://github.com/ciro-maciel/utility/compare/v2.3.2...v2.3.3) (2021-03-12)
 
 
