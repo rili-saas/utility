@@ -1,5 +1,5 @@
-import link from "./link";
-import body from "./body";
-import widget from "./widget";
+import Link from "./link";
+import Body from "./body";
+import Widget from "./widget";
 
-export default { link, body, widget };
+export default { Link, Body, Widget };
