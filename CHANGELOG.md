@@ -1,3 +1,10 @@
+## [2.4.1](https://github.com/ciro-maciel/utility/compare/v2.4.0...v2.4.1) (2021-03-23)
+
+
+### Bug Fixes
+
+* components name ([7058ab0](https://github.com/ciro-maciel/utility/commit/7058ab0ad04443f4f60708c08011642c7977ab2d))
+
 # [2.4.0](https://github.com/ciro-maciel/utility/compare/v2.3.3...v2.4.0) (2021-03-23)
 
 
