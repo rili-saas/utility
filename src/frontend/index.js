@@ -1,3 +1,4 @@
+import components from "./components";
 import hooks from "./hooks";
 
-export { hooks };
+export { hooks, components };

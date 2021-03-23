@@ -1,4 +1,5 @@
 import { nodeResolve } from "@rollup/plugin-node-resolve";
+import { babel } from "@rollup/plugin-babel";
 
 export default [
   {
@@ -8,9 +9,15 @@ export default [
     output: [{ file: "clients/backend.js", format: "cjs" }],
   },
   {
-    plugins: [nodeResolve()],
+    plugins: [
+      nodeResolve(),
+      babel({
+        babelHelpers: "bundled",
+        presets: ["@babel/preset-react"],
+      }),
+    ],
     input: "src/frontend/index.js",
-    external: ["react"],
+    external: ["react", "react-router-dom", "antd", "prop-types"],
     output: [{ file: "clients/frontend.js", format: "es" }],
   },
   {
