@@ -142,7 +142,7 @@ function FooterContent(props) {
         backgroundColor: "rgb(245, 245, 245)",
         display: "flex",
         justifyContent: "flex-end",
-        padding: "8px",
+        padding: "16px",
         marginTop: "8px",
         ...style,
       }}
