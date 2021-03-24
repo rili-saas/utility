@@ -7,7 +7,7 @@ const Widget = function (props) {
       style={{
         backgroundColor: "#ffffff",
         boxShadow: "0px 0px 10px 0px #ddd",
-        marginBottom: "12px",
+        marginBottom: "16px",
         borderRadius: "8px",
         display: "flex",
         flexDirection: "column",
