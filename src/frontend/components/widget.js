@@ -117,7 +117,10 @@ HeaderContent.Option = HeaderOption;
 function BodyContent(props) {
   const { children, style } = props;
   return (
-    <div {...props} style={{ flex: "1", padding: "0px 8px 8px", ...style }}>
+    <div
+      {...props}
+      style={{ flex: "1", padding: "0px 16px 16px 16px", ...style }}
+    >
       {children}
     </div>
   );
