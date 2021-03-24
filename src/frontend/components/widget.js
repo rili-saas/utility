@@ -107,7 +107,7 @@ HeaderContent.Option = HeaderOption;
 function BodyContent(props) {
   const { children, style } = props;
   return (
-    <div {...props} style={{ flex: "1", padding: "0px 10px 10px", ...style }}>
+    <div {...props} style={{ flex: "1", padding: "0px 8px 8px", ...style }}>
       {children}
     </div>
   );
@@ -119,7 +119,34 @@ BodyContent.propTypes = {
 };
 // body
 
+// footer
+function FooterContent(props) {
+  const { children, style } = props;
+  return (
+    <div
+      {...props}
+      style={{
+        backgroundColor: "rgb(245, 245, 245)",
+        display: "flex",
+        justifyContent: "flex-end",
+        padding: "8px",
+        marginTop: "8px",
+        ...style,
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+FooterContent.propTypes = {
+  children: PropTypes.node,
+  style: PropTypes.object,
+};
+// footer
+
 Widget.Header = HeaderContent;
 Widget.Body = BodyContent;
+Widget.Footer = FooterContent;
 
 export default Widget;
