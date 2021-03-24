@@ -55,7 +55,17 @@ const HeaderIcon = function (props) {
 function HeaderText(props) {
   const { children, style } = props;
   return (
-    <h3 {...props} style={{ margin: "0", fontWeight: "bold", ...style }}>
+    <h3
+      {...props}
+      style={{
+        margin: "0",
+        fontWeight: "bold",
+        whiteSpace: "nowrap",
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        ...style,
+      }}
+    >
       {children}
     </h3>
   );
