@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/ciro-maciel/utility/compare/v2.4.1...v2.5.0) (2021-03-24)
+
+
+### Features
+
+* **widget:** add Footer component ([7c35d3e](https://github.com/ciro-maciel/utility/commit/7c35d3e666d248e6101e8e97ee706c4fcfabcb76))
+
 ## [2.4.1](https://github.com/ciro-maciel/utility/compare/v2.4.0...v2.4.1) (2021-03-23)
 
 
