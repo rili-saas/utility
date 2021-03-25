@@ -1,3 +1,10 @@
+## [2.5.5](https://github.com/ciro-maciel/utility/compare/v2.5.4...v2.5.5) (2021-03-25)
+
+
+### Bug Fixes
+
+* **widget:** style ([f4522a6](https://github.com/ciro-maciel/utility/commit/f4522a684be5d560b01c0100634516af6d4723b1))
+
 ## [2.5.4](https://github.com/ciro-maciel/utility/compare/v2.5.3...v2.5.4) (2021-03-25)
 
 
