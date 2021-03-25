@@ -1,3 +1,10 @@
+## [2.5.4](https://github.com/ciro-maciel/utility/compare/v2.5.3...v2.5.4) (2021-03-25)
+
+
+### Bug Fixes
+
+* stily em body ([a76a689](https://github.com/ciro-maciel/utility/commit/a76a689da8ffbd5dd08b633de17036ea8cda5d34))
+
 ## [2.5.3](https://github.com/ciro-maciel/utility/compare/v2.5.2...v2.5.3) (2021-03-24)
 
 
