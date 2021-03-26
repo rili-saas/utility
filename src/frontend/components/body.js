@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import { Row } from 'antd';
+import { Row } from "antd";
 
 const Body = (props) => {
   const { children, style, ...rest } = props;
@@ -9,17 +9,18 @@ const Body = (props) => {
     <Row
       justify="center"
       style={{
-        minHeight: 'calc(calc(100vh - calc(100vh - 100%)) - 100px)',
-        width: '100%',
-        padding: '0 8px',
+        minHeight: "calc(calc(100vh - calc(100vh - 100%)) - 100px)",
+        width: "100%",
+        padding: "0 8px",
       }}
     >
       <Row
         style={{
-          maxWidth: '1116px',
-          width: '100%',
-          padding: '16px 0px',
-          alignContent: 'flex-start',
+          maxWidth: "1116px",
+          width: "100%",
+          padding: "16px 0px",
+          alignContent: "flex-start",
+          flexDirection: "column",
           ...style,
         }}
         {...rest}
