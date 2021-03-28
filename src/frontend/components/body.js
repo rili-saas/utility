@@ -19,7 +19,6 @@ const Body = (props) => {
           maxWidth: "1116px",
           width: "100%",
           padding: "16px 0px",
-          alignContent: "flex-start",
           flexDirection: "column",
           ...style,
         }}
