@@ -1,3 +1,10 @@
+## [2.5.7](https://github.com/ciro-maciel/utility/compare/v2.5.6...v2.5.7) (2021-03-28)
+
+
+### Bug Fixes
+
+* **widget:** alignContent ([4d787e8](https://github.com/ciro-maciel/utility/commit/4d787e8952fca363f3f471a24e899952f18d608b))
+
 ## [2.5.6](https://github.com/ciro-maciel/utility/compare/v2.5.5...v2.5.6) (2021-03-26)
 
 
