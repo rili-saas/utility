@@ -1,3 +1,10 @@
+## [2.5.6](https://github.com/ciro-maciel/utility/compare/v2.5.5...v2.5.6) (2021-03-26)
+
+
+### Bug Fixes
+
+* **widget:** flexDirection ([e40a7b8](https://github.com/ciro-maciel/utility/commit/e40a7b89d9c1f40afe5229c74e02d1f173109f9b))
+
 ## [2.5.5](https://github.com/ciro-maciel/utility/compare/v2.5.4...v2.5.5) (2021-03-25)
 
 
