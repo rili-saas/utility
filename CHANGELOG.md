@@ -1,3 +1,10 @@
+## [2.5.10](https://github.com/ciro-maciel/utility/compare/v2.5.9...v2.5.10) (2021-04-01)
+
+
+### Bug Fixes
+
+* **body:** size to object ([ba8af32](https://github.com/ciro-maciel/utility/commit/ba8af32feb100a6d467009d4210005e193969262))
+
 ## [2.5.9](https://github.com/ciro-maciel/utility/compare/v2.5.8...v2.5.9) (2021-04-01)
 
 
