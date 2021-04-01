@@ -9,7 +9,7 @@ const Body = (props) => {
     <Row
       justify="center"
       style={{
-        minHeight: "calc(calc(100vh - calc(100vh - 100%)) - 100px)",
+        minHeight: "calc(calc(100vh - calc(100vh - 100%)) - 144px)",
         width: "100%",
         padding: "0 8px",
       }}
