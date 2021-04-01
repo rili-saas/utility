@@ -1,3 +1,10 @@
+## [2.5.8](https://github.com/ciro-maciel/utility/compare/v2.5.7...v2.5.8) (2021-04-01)
+
+
+### Bug Fixes
+
+* **body:** minHeight ([f695f88](https://github.com/ciro-maciel/utility/commit/f695f884a1923f1edb614872715cb95ab52f8fec))
+
 ## [2.5.7](https://github.com/ciro-maciel/utility/compare/v2.5.6...v2.5.7) (2021-03-28)
 
 
