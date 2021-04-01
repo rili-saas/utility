@@ -1,3 +1,10 @@
+## [2.5.9](https://github.com/ciro-maciel/utility/compare/v2.5.8...v2.5.9) (2021-04-01)
+
+
+### Bug Fixes
+
+* **body:** add size parameter ([44f7b56](https://github.com/ciro-maciel/utility/commit/44f7b562b7b61d8dd2e5282859189937b8870761))
+
 ## [2.5.8](https://github.com/ciro-maciel/utility/compare/v2.5.7...v2.5.8) (2021-04-01)
 
 
