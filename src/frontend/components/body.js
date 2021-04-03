@@ -33,7 +33,7 @@ const Body = (props) => {
 Body.propTypes = {
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
   style: PropTypes.object,
-  size: PropTypes.object.isRequired,
+  size: PropTypes.object,
 };
 
 export default Body;
