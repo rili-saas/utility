@@ -1,3 +1,10 @@
+## [2.5.11](https://github.com/ciro-maciel/utility/compare/v2.5.10...v2.5.11) (2021-04-03)
+
+
+### Bug Fixes
+
+* **body:** remove required ([4c063dc](https://github.com/ciro-maciel/utility/commit/4c063dc3179bd1d1814b80597634f84787abdc68))
+
 ## [2.5.10](https://github.com/ciro-maciel/utility/compare/v2.5.9...v2.5.10) (2021-04-01)
 
 
