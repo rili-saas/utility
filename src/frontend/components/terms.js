@@ -7,14 +7,14 @@ import Components from ".";
 
 const Terms = (props) => {
   return [
-    <Row justify="center">
+    <Row key="title" justify="center">
       <Typography.Title>
         <SafetyOutlined style={{ fontSize: "55px" }} />
         {"  "}
         Termos de Serviço
       </Typography.Title>
     </Row>,
-    <Row>
+    <Row key="content">
       <Col xs={24} md={24}>
         <Typography.Paragraph>
           Estes Termos de Serviço (“Termos”) regem seu acesso e uso de nossos

@@ -1,20 +1,20 @@
 import React from "react";
 
-import { Row, Col, Typography } from "antd";
+import { Row, Col, Typography, List } from "antd";
 import { LockOutlined } from "@ant-design/icons";
 
 import Components from ".";
 
 const Privacy = (props) => {
   return [
-    <Row justify="center">
+    <Row key="title" justify="center">
       <Typography.Title>
         <LockOutlined style={{ fontSize: "55px" }} />
         {"  "}
         Política de Privacidade
       </Typography.Title>
     </Row>,
-    <Row>
+    <Row key="content">
       <Col xs={24} md={24}>
         <Typography.Paragraph>
           Acreditamos que você sempre deve saber quais dados coletamos de você e
