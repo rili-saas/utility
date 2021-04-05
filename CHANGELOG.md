@@ -1,3 +1,10 @@
+## [2.6.1](https://github.com/ciro-maciel/utility/compare/v2.6.0...v2.6.1) (2021-04-05)
+
+
+### Bug Fixes
+
+* **frontend:** key's ([d2873de](https://github.com/ciro-maciel/utility/commit/d2873de4dcd17f9e00abc92f74686770a1e5926f))
+
 # [2.6.0](https://github.com/ciro-maciel/utility/compare/v2.5.11...v2.6.0) (2021-04-05)
 
 
