@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/ciro-maciel/utility/compare/v2.6.1...v2.7.0) (2021-04-07)
+
+
+### Features
+
+* **frontend:** new  components ([074eb58](https://github.com/ciro-maciel/utility/commit/074eb58f425c2f60801a72d000e24bfc85634ed3))
+
 ## [2.6.1](https://github.com/ciro-maciel/utility/compare/v2.6.0...v2.6.1) (2021-04-05)
 
 
