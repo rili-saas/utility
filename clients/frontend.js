@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Link as Link$1 } from 'react-router-dom';
-import { Row, Typography, Col } from 'antd';
+import { Row, Typography, Col, List } from 'antd';
 import { LockOutlined, SafetyOutlined } from '@ant-design/icons';
 
 function _extends() {
@@ -214,12 +214,15 @@ Widget.Footer = FooterContent;
 
 const Privacy = props => {
   return [/*#__PURE__*/React.createElement(Row, {
+    key: "title",
     justify: "center"
   }, /*#__PURE__*/React.createElement(Typography.Title, null, /*#__PURE__*/React.createElement(LockOutlined, {
     style: {
       fontSize: "55px"
     }
-  }), "  ", "Pol\xEDtica de Privacidade")), /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Col, {
+  }), "  ", "Pol\xEDtica de Privacidade")), /*#__PURE__*/React.createElement(Row, {
+    key: "content"
+  }, /*#__PURE__*/React.createElement(Col, {
     xs: 24,
     md: 24
   }, /*#__PURE__*/React.createElement(Typography.Paragraph, null, "Acreditamos que voc\xEA sempre deve saber quais dados coletamos de voc\xEA e como os usamos, e que voc\xEA deve ter um controle significativo sobre isso. Queremos capacit\xE1-lo para tomar as melhores decis\xF5es sobre as informa\xE7\xF5es que voc\xEA compartilha conosco."), /*#__PURE__*/React.createElement(Typography.Paragraph, null, "Esse \xE9 o objetivo desta Pol\xEDtica de Privacidade."), /*#__PURE__*/React.createElement(Typography.Title, {
@@ -281,12 +284,15 @@ const Privacy = props => {
 
 const Terms = props => {
   return [/*#__PURE__*/React.createElement(Row, {
+    key: "title",
     justify: "center"
   }, /*#__PURE__*/React.createElement(Typography.Title, null, /*#__PURE__*/React.createElement(SafetyOutlined, {
     style: {
       fontSize: "55px"
     }
-  }), "  ", "Termos de Servi\xE7o")), /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Col, {
+  }), "  ", "Termos de Servi\xE7o")), /*#__PURE__*/React.createElement(Row, {
+    key: "content"
+  }, /*#__PURE__*/React.createElement(Col, {
     xs: 24,
     md: 24
   }, /*#__PURE__*/React.createElement(Typography.Paragraph, null, "Estes Termos de Servi\xE7o (\u201CTermos\u201D) regem seu acesso e uso de nossos servi\xE7os, incluindo nossos v\xE1rios sites, SMS, APIs, notifica\xE7\xF5es por e-mail, aplicativos, bot\xF5es, widgets, an\xFAncios, servi\xE7os comerciais, e nossos outros servi\xE7os cobertos que est\xE3o vinculados a estes Termos (coletivamente, os \u201CServi\xE7os\u201D), e quaisquer informa\xE7\xF5es, textos, links, gr\xE1ficos, fotos, \xE1udios, v\xEDdeos ou outros materiais ou disposi\xE7\xE3o de materiais enviados, baixados ou exibidos nos Servi\xE7os (coletivamente denominados como \u201CConte\xFAdo\u201D). Ao utilizar os Servi\xE7os, voc\xEA concorda em estar sujeito a estes Termos."), /*#__PURE__*/React.createElement(Typography.Title, {
