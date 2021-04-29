@@ -319,6 +319,8 @@ export default class Dynamo {
     process.env.STAGE === "test" && console.log("response", response);
 
     if (response.LastEvaluatedKey) {
+      count = response.Count;
+
       while (response.LastEvaluatedKey) {
         params.ExclusiveStartKey = response.LastEvaluatedKey;
         response = await this.client.query(params).promise();
