@@ -336,7 +336,7 @@ export default class Dynamo {
         } else {
           items = items.concat(response.Items);
         }
-        count += response.count;
+        count += response.Count;
       }
     }
 
