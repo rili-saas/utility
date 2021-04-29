@@ -319,15 +319,14 @@ export default class Dynamo {
     process.env.STAGE === "test" && console.log("response", response);
 
     if (response.LastEvaluatedKey) {
-      count = response.Count;
-
       while (response.LastEvaluatedKey) {
         params.ExclusiveStartKey = response.LastEvaluatedKey;
         response = await this.client.query(params).promise();
 
-        process.env.STAGE === "test" && console.log("page - params", params);
-        process.env.STAGE === "test" &&
-          console.log("page - response", response);
+        count = count + response.Count;
+
+        process.env.STAGE === "test" && console.log("p - params", params);
+        process.env.STAGE === "test" && console.log("p - response", response);
 
         if (limit && items.length + response.Items.length > limit) {
           const itensToCopy = limit - items.length;
@@ -338,7 +337,6 @@ export default class Dynamo {
         } else {
           items = items.concat(response.Items);
         }
-        count += response.Count;
       }
     }
 
