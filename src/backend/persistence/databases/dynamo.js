@@ -293,7 +293,7 @@ export default class Dynamo {
       ProjectionExpression: attributesToGetString,
     });
 
-    const { Count: count } = await this.client
+    let { Count: count } = await this.client
       .query({
         ...params,
         Select: "COUNT",
@@ -323,11 +323,14 @@ export default class Dynamo {
         params.ExclusiveStartKey = response.LastEvaluatedKey;
         response = await this.client.query(params).promise();
 
-        process.env.STAGE === "test" && console.log("w - params", params);
-        process.env.STAGE === "test" && console.log("w - response", response);
+        process.env.STAGE === "test" && console.log("page - params", params);
+        process.env.STAGE === "test" &&
+          console.log("page - response", response);
 
         if (limit && items.length + response.Items.length > limit) {
           const itensToCopy = limit - items.length;
+
+          count += response.count;
 
           items = items.concat(response.Items.slice(0, itensToCopy));
 
