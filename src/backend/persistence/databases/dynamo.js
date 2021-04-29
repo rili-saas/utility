@@ -330,14 +330,13 @@ export default class Dynamo {
         if (limit && items.length + response.Items.length > limit) {
           const itensToCopy = limit - items.length;
 
-          count += response.count;
-
           items = items.concat(response.Items.slice(0, itensToCopy));
 
           response.LastEvaluatedKey = null;
         } else {
           items = items.concat(response.Items);
         }
+        count += response.count;
       }
     }
 
