@@ -334,7 +334,9 @@ export default class Dynamo {
 
         items = items.concat(response.Items.slice(0, itensToCopy));
 
-        response.LastEvaluatedKey = null;
+        break;
+
+        // response.LastEvaluatedKey = null;
       } else {
         items = items.concat(response.Items);
       }
