@@ -1,3 +1,10 @@
+## [2.7.7](https://github.com/ciro-maciel/utility/compare/v2.7.6...v2.7.7) (2021-04-30)
+
+
+### Bug Fixes
+
+* **backend:** all items ([e581e97](https://github.com/ciro-maciel/utility/commit/e581e970e542240ab3453b6fe2a76ac9f00f3531))
+
 ## [2.7.6](https://github.com/ciro-maciel/utility/compare/v2.7.5...v2.7.6) (2021-04-30)
 
 
