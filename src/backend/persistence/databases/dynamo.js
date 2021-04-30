@@ -293,12 +293,12 @@ export default class Dynamo {
       ProjectionExpression: attributesToGetString,
     });
 
-    let { Count: count } = await this.client
-      .query({
-        ...params,
-        Select: "COUNT",
-      })
-      .promise();
+    // let { Count: count } = await this.client
+    //   .query({
+    //     ...params,
+    //     Select: "COUNT",
+    //   })
+    //   .promise();
 
     if (sort) {
       params.ScanIndexForward = sort.dir !== "desc";
@@ -323,7 +323,7 @@ export default class Dynamo {
         params.ExclusiveStartKey = response.LastEvaluatedKey;
         response = await this.client.query(params).promise();
 
-        count = count + response.Count;
+        // count = count + response.Count;
 
         process.env.STAGE === "test" && console.log("p - params", params);
         process.env.STAGE === "test" && console.log("p - response", response);
@@ -341,7 +341,7 @@ export default class Dynamo {
     }
 
     return {
-      count,
+      hasItems: !!response.LastEvaluatedKey,
       items,
     };
   }
