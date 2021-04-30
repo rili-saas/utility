@@ -293,6 +293,7 @@ export default class Dynamo {
       ProjectionExpression: attributesToGetString,
     });
 
+    // https://docs.aws.amazon.com/pt_br/amazondynamodb/latest/developerguide/Query.html
     // let { Count: count } = await this.client
     //   .query({
     //     ...params,
@@ -313,35 +314,35 @@ export default class Dynamo {
     }
 
     let response = await this.client.query(params).promise();
-    let items = [...response.Items];
+    let items = response.Items;
 
     process.env.STAGE === "test" && console.log("params", params);
     process.env.STAGE === "test" && console.log("response", response);
 
-    if (response.LastEvaluatedKey) {
-      while (response.LastEvaluatedKey) {
-        params.ExclusiveStartKey = response.LastEvaluatedKey;
-        response = await this.client.query(params).promise();
+    // if (response.LastEvaluatedKey) {
+    while (response.LastEvaluatedKey) {
+      params.ExclusiveStartKey = response.LastEvaluatedKey;
+      response = await this.client.query(params).promise();
 
-        // count = count + response.Count;
+      // count = count + response.Count;
 
-        process.env.STAGE === "test" && console.log("p - params", params);
-        process.env.STAGE === "test" && console.log("p - response", response);
+      process.env.STAGE === "test" && console.log("p - params", params);
+      process.env.STAGE === "test" && console.log("p - response", response);
 
-        if (limit && items.length + response.Items.length > limit) {
-          const itensToCopy = limit - items.length;
+      if (limit && items.length + response.Items.length > limit) {
+        const itensToCopy = limit - items.length;
 
-          items = items.concat(response.Items.slice(0, itensToCopy));
+        items = items.concat(response.Items.slice(0, itensToCopy));
 
-          response.LastEvaluatedKey = null;
-        } else {
-          items = items.concat(response.Items);
-        }
+        response.LastEvaluatedKey = null;
+      } else {
+        items = items.concat(response.Items);
       }
     }
+    // }
 
     return {
-      hasItems: !!response.LastEvaluatedKey,
+      hasMore: !!response.LastEvaluatedKey,
       items,
     };
   }
