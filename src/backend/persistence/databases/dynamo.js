@@ -267,6 +267,19 @@ export default class Dynamo {
     return response.Items;
   }
 
+  async count() {
+    // https://docs.aws.amazon.com/pt_br/amazondynamodb/latest/developerguide/Query.html
+    // let { Count: count } = await this.client
+    //   .query({
+    //     ...params,
+    //     Select: "COUNT",
+    //   })
+    //   .promise();
+    // count = count + response.Count;
+    // response.LastEvaluatedKey = null;
+    // }
+  }
+
   async filter({
     indexName = null,
     filter = null,
@@ -274,7 +287,6 @@ export default class Dynamo {
     skip = null,
     sort = null,
     attributesToGetString = null,
-    lean = false,
   }) {
     const {
       KeyConditionExpression,
@@ -292,14 +304,6 @@ export default class Dynamo {
       FilterExpression,
       ProjectionExpression: attributesToGetString,
     });
-
-    // https://docs.aws.amazon.com/pt_br/amazondynamodb/latest/developerguide/Query.html
-    // let { Count: count } = await this.client
-    //   .query({
-    //     ...params,
-    //     Select: "COUNT",
-    //   })
-    //   .promise();
 
     if (sort) {
       params.ScanIndexForward = sort.dir !== "desc";
@@ -319,12 +323,9 @@ export default class Dynamo {
     process.env.STAGE === "test" && console.log("params", params);
     process.env.STAGE === "test" && console.log("response", response);
 
-    // if (response.LastEvaluatedKey) {
     while (response.LastEvaluatedKey) {
       params.ExclusiveStartKey = response.LastEvaluatedKey;
       response = await this.client.query(params).promise();
-
-      // count = count + response.Count;
 
       process.env.STAGE === "test" && console.log("p - params", params);
       process.env.STAGE === "test" && console.log("p - response", response);
@@ -335,13 +336,10 @@ export default class Dynamo {
         items = items.concat(response.Items.slice(0, itensToCopy));
 
         break;
-
-        // response.LastEvaluatedKey = null;
       } else {
         items = items.concat(response.Items);
       }
     }
-    // }
 
     return {
       hasMore: !!response.LastEvaluatedKey,
