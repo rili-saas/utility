@@ -1,6 +1,6 @@
 ## RiLi - Utility [![deploy to Prod](https://github.com/rili-saas/utility/actions/workflows/toProd.yml/badge.svg)](https://github.com/rili-saas/utility/actions/workflows/toProd.yml) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@rili-saas/utility) ![npm](https://img.shields.io/npm/v/@rili-saas/utility) ![NPM](https://img.shields.io/npm/l/@rili-saas/utility)
 
-utility package for development Applications
+Utility package for development Applications
 
 This is our shared package for development Applications used for front-end and back-end projects at RiLi.
 
