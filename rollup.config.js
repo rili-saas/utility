@@ -24,8 +24,8 @@ export default [
     plugins: [nodeResolve()],
     input: "src/utility/index.js",
     output: [
-      { file: "dist/utility.cjs.js", format: "cjs", exports: "default" },
-      { file: "dist/utility.esm.js", format: "es" },
+      { file: "utility.cjs.js", format: "cjs", exports: "default" },
+      { file: "utility.esm.js", format: "es" },
     ],
   },
 ];

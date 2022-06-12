@@ -13,8 +13,8 @@
     "rili-saas"
   ],
   "private": false,
-  "main": "dist/utility.cjs.js",
-  "module": "dist/utility.esm.js",
+  "main": "utility.cjs.js",
+  "module": "utility.esm.js",
   "files": [
     "clients"
   ],

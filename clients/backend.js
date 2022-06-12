@@ -387,6 +387,19 @@ class Dynamo {
     return response.Items;
   }
 
+  async count() {
+    // https://docs.aws.amazon.com/pt_br/amazondynamodb/latest/developerguide/Query.html
+    // let { Count: count } = await this.client
+    //   .query({
+    //     ...params,
+    //     Select: "COUNT",
+    //   })
+    //   .promise();
+    // count = count + response.Count;
+    // response.LastEvaluatedKey = null;
+    // }
+  }
+
   async filter({
     indexName = null,
     filter = null,
@@ -394,7 +407,6 @@ class Dynamo {
     skip = null,
     sort = null,
     attributesToGetString = null,
-    lean = false,
   }) {
     const {
       KeyConditionExpression,
@@ -413,13 +425,6 @@ class Dynamo {
       ProjectionExpression: attributesToGetString,
     });
 
-    const { Count: count } = await this.client
-      .query({
-        ...params,
-        Select: "COUNT",
-      })
-      .promise();
-
     if (sort) {
       params.ScanIndexForward = sort.dir !== "desc";
     }
@@ -433,33 +438,31 @@ class Dynamo {
     }
 
     let response = await this.client.query(params).promise();
-    let items = [...response.Items];
+    let items = response.Items;
 
     process.env.STAGE === "test" && console.log("params", params);
     process.env.STAGE === "test" && console.log("response", response);
 
-    if (response.LastEvaluatedKey) {
-      while (response.LastEvaluatedKey) {
-        params.ExclusiveStartKey = response.LastEvaluatedKey;
-        response = await this.client.query(params).promise();
+    while (response.LastEvaluatedKey) {
+      params.ExclusiveStartKey = response.LastEvaluatedKey;
+      response = await this.client.query(params).promise();
 
-        process.env.STAGE === "test" && console.log("w - params", params);
-        process.env.STAGE === "test" && console.log("w - response", response);
+      process.env.STAGE === "test" && console.log("p - params", params);
+      process.env.STAGE === "test" && console.log("p - response", response);
 
-        if (limit && items.length + response.Items.length > limit) {
-          const itensToCopy = limit - items.length;
+      if (limit && items.length + response.Items.length > limit) {
+        const itensToCopy = limit - items.length;
 
-          items = items.concat(response.Items.slice(0, itensToCopy));
+        items = items.concat(response.Items.slice(0, itensToCopy));
 
-          response.LastEvaluatedKey = null;
-        } else {
-          items = items.concat(response.Items);
-        }
+        break;
+      } else {
+        items = items.concat(response.Items);
       }
     }
 
     return {
-      count,
+      hasMore: !!response.LastEvaluatedKey,
       items,
     };
   }
