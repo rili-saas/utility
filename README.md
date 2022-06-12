@@ -2,7 +2,7 @@
 
 Utility package for development Applications
 
-This is our shared package for development Applications used for front-end and back-end projects at RiLi.
+This is our shared package for development Applications used for front-end and back-end projects at https://rili.be
 
 ### Getting Started
 
