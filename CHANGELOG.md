@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/rili-saas/utility/compare/v2.7.9...v2.8.0) (2022-06-12)
+
+
+### Features
+
+* update ([1a764ca](https://github.com/rili-saas/utility/commit/1a764ca4374693f4adad6d49c4733a8f95ed51f4))
+
 ## [2.7.9](https://github.com/ciro-maciel/utility/compare/v2.7.8...v2.7.9) (2021-04-30)
 
 
