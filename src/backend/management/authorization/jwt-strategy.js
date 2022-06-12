@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-const { SECRET } = process.env;
+const { JWT_SECRET } = process.env;
 
 export default (token) => {
   if (!token) {
@@ -38,7 +38,7 @@ export default (token) => {
   }
 
   try {
-    verify = jwt.verify(data, SECRET);
+    verify = jwt.verify(data, JWT_SECRET);
     authenticated = !!verify;
   } catch (err) {}
 

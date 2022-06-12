@@ -65,7 +65,7 @@ var cucAuthorizationStrategy = (data) => {
 
 const jwt = require("jsonwebtoken");
 
-const { SECRET } = process.env;
+const { JWT_SECRET } = process.env;
 
 var jwtAuthorizationStrategy = (token) => {
   if (!token) {
@@ -103,7 +103,7 @@ var jwtAuthorizationStrategy = (token) => {
   }
 
   try {
-    verify = jwt.verify(data, SECRET);
+    verify = jwt.verify(data, JWT_SECRET);
     authenticated = !!verify;
   } catch (err) {}
 

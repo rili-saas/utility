@@ -1,16 +1,16 @@
 {
-  "name": "@ciro-maciel/utility",
+  "name": "@rili-saas/utility",
   "version": "2.7.9",
   "description": "utility package for development Applications",
-  "homepage": "https://ciro-maciel.me/",
+  "homepage": "https://rili.be",
   "license": "CC-BY-NC-SA-4.0",
-  "repository": "https://github.com/ciro-maciel/utility.git",
+  "repository": "https://github.com/rili-saas/utility.git",
   "keywords": [
     "utility",
     "react",
     "internalization",
     "i18n",
-    "ciro-maciel"
+    "rili-saas"
   ],
   "private": false,
   "main": "dist/utility.cjs.js",
@@ -20,7 +20,7 @@
   ],
   "author": {
     "name": "Ciro Cesar Maciel",
-    "email": "me@ciro-maciel.me"
+    "email": "ciro.maciel@rili.be"
   },
   "publishConfig": {
     "access": "public"
