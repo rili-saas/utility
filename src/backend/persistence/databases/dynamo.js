@@ -349,23 +349,23 @@ export default class Dynamo {
 }
 
 const removeEmptyStringAndNullElements = (obj) => {
-  for (const prop in obj) {
-    if (typeof obj[prop] === "object" && obj[prop] !== null) {
-      // dive deeper in
-      if (!Object.keys(obj[prop]).length) {
-        // delete obj[prop];
-      } else {
-        removeEmptyStringAndNullElements(obj[prop]);
-      }
-    } else if (
-      obj[prop] === "" ||
-      obj[prop] === null ||
-      obj[prop] === undefined
-    ) {
-      // delete elements that are empty strings
-      // delete obj[prop];
-    }
-  }
+  // for (const prop in obj) {
+  //   if (typeof obj[prop] === "object" && obj[prop] !== null) {
+  //     // dive deeper in
+  //     if (!Object.keys(obj[prop]).length) {
+  //       delete obj[prop];
+  //     } else {
+  //       removeEmptyStringAndNullElements(obj[prop]);
+  //     }
+  //   } else if (
+  //     obj[prop] === "" ||
+  //     obj[prop] === null ||
+  //     obj[prop] === undefined
+  //   ) {
+  //     // delete elements that are empty strings
+  //     delete obj[prop];
+  //   }
+  // }
   return obj;
 };
 
