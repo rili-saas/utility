@@ -353,7 +353,7 @@ const removeEmptyStringAndNullElements = (obj) => {
     if (typeof obj[prop] === "object" && obj[prop] !== null) {
       // dive deeper in
       if (!Object.keys(obj[prop]).length) {
-        delete obj[prop];
+        // delete obj[prop];
       } else {
         removeEmptyStringAndNullElements(obj[prop]);
       }
@@ -363,7 +363,7 @@ const removeEmptyStringAndNullElements = (obj) => {
       obj[prop] === undefined
     ) {
       // delete elements that are empty strings
-      delete obj[prop];
+      // delete obj[prop];
     }
   }
   return obj;
