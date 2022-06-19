@@ -349,6 +349,10 @@ export default class Dynamo {
 }
 
 const removeEmptyStringAndNullElements = (obj) => {
+  // ValidationException: Invalid FilterExpression: The expression can not be empty;
+  if (prop === "FilterExpression" && obj[prop] === "") {
+    delete obj[prop];
+  }
   // for (const prop in obj) {
   //   if (typeof obj[prop] === "object" && obj[prop] !== null) {
   //     // dive deeper in
