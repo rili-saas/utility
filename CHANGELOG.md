@@ -1,3 +1,10 @@
+## [2.8.3](https://github.com/rili-saas/utility/compare/v2.8.2...v2.8.3) (2022-06-19)
+
+
+### Bug Fixes
+
+* An expression attribute value used in expression is not defined ([a2d5416](https://github.com/rili-saas/utility/commit/a2d54162b99187434230df153da38134dec28a62))
+
 ## [2.8.2](https://github.com/rili-saas/utility/compare/v2.8.1...v2.8.2) (2022-06-19)
 
 
